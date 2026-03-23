@@ -43,27 +43,27 @@
     <div class="greenfilter">
       
       <header class="header">
-        
         <nav class="nav">
         <i class="fa-solid fa-bars fa-md"></i>  
         </nav>
         <h1 class="orbitron-font name"> EGR Digital</h1>
-        <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
-        <i class="fa-regular fa-window-minimize"></i>
-        </button>
+        <i class="fa-solid fa-user-secret fa-md"></i>
       </header>
 
-      <div class="hero" id="hero-section">
+      <div class="hero">
         <div id="hero-content">
-          <h3 class="monospace">DESIGN | BUILD | SECURE | MAINTAIN</h3>
-          <p class="body">Websites, webstores, web apps and pen testing for your business.</p>
-          <a href="#explore" class="four"><i class="fa-solid fa-globe fa-md"></i> : Explore</a>
-          <h5>Project Future Vision © <span id="current-year"></span> [all rights reserved]</h5>
+          <div class="hero-header">
+            <h3 class="monospace">DESIGN | BUILD | SECURE | MAINTAIN</h3>
+            <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
+              <i class="fa-regular fa-window-minimize"></i>
+            </button>
+          </div>
+          <div id="hero-section">
+            <p class="body">Websites, webstores, web apps and pen testing for your business.</p>
+            <a href="#explore" class="four"><i class="fa-solid fa-globe fa-md"></i> : Explore</a>
+            <h5>Project Future Vision © <span id="current-year"></span> [all rights reserved]</h5>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <h1 class="orbitron-font">SITREP</h1>
       </div>
                 
       <div class="sidebar">
@@ -82,6 +82,10 @@
         </div>
       </section>
 
+      <div>
+        <h1 class="orbitron-font">SITREP</h1>
+      </div>
+      
       <main class="wrapper">
         <section class="card" id="analytics">
           <h3>LOCSTAT</h3>
@@ -94,7 +98,7 @@
             <br><span id="timezone"></span>
             <br><span id="language"></span>
           </div>
-          <button id="send-locstat" class="four send">SEND LOCSTAT</button>
+          <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
         </section>
         
         <section class="map-container">
@@ -113,9 +117,13 @@
         </div>
       </main> 
 
+      <div>
+        <h1 class="orbitron-font">AIRSPACE</h1>
+      </div>
+
       <section class="airtracker"> 
         <div class="airspace-monitor">
-          <h3 class="radar-header">YOUR AIRSPACE @ 1090 MHZ</h3>
+          <h3 class="radar-header">RADIO INTERCEPT ON 1090 MHZ</h3>
           <p>@ <span class="coord-display">LOCATING...</span></p>
           <div id="radar-display" class="radar-container">
             <div class="ring" style="width: 33%; height: 33%;"><span>15mi</span></div>

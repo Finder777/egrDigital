@@ -125,7 +125,7 @@ h1 {
     overflow: hidden;
 }
 
-.collapsed #hero-content {
+#hero-section.collapsed {
     max-height: 0;
     opacity: 0;
     margin: 0;
@@ -138,7 +138,7 @@ h1 {
 }
 .monospace {
     font-family: "Courier New", Courier, monospace;
-    font-size: clamp(1.2rem, 3vw, 4rem);
+    font-size: clamp(1.4rem, 3vw, 4rem);
     font-weight: 200;
     color:aqua;
 }
