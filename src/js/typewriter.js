@@ -1,4 +1,4 @@
-import { loadAnalyticsData } from '/js/analytics.js';
+import { loadAnalyticsData } from '/js/page.js';
 
 async function typeLine(el, speed) {
     return new Promise((resolve) => {

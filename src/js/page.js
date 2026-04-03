@@ -115,7 +115,6 @@ requestLocation();
 export function loadAnalyticsData() {
     return new Promise((resolve) => {
 
-        // 1. Time & Date Logic
         const now = new Date();
         const dateElement = document.getElementById('current-date');
         if (dateElement) dateElement.textContent = `Date: ${now.toDateString()}`;
@@ -126,7 +125,6 @@ export function loadAnalyticsData() {
         const timeElement = document.getElementById('current-time');
         if (timeElement) timeElement.textContent = `Time: ${now.toLocaleTimeString()}`;
 
-        // 2. Geolocation Logic
         const locationDisplayElement = document.getElementById('location');
         function updateLocationDisplay(text) {
             if (locationDisplayElement) {
@@ -143,7 +141,6 @@ export function loadAnalyticsData() {
 
         navigator.geolocation.getCurrentPosition(
             position => {
-                // FIX: Update the exported global variables
                 currentLat = position.coords.latitude;
                 currentLon = position.coords.longitude;
 
@@ -182,7 +179,7 @@ export function loadAnalyticsData() {
             }
         );
 
-        // 3. System Meta-Data
+        // System Meta-Data
         const timezoneDisplayElement = document.getElementById('timezone');
         const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         if (timezoneDisplayElement) timezoneDisplayElement.textContent = `Timezone: ${userTimezone}`;
