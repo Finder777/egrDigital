@@ -1,6 +1,8 @@
 // --- GLOBAL STATE & IMPORTS ---
 export let currentLat = null;
 export let currentLon = null;
+let map;
+let userMarker;
 import { updateAirspace } from './radar.js';
 
 // --- WEATHER ENGINE ---
@@ -50,52 +52,15 @@ async function updateWeather(lat, lon) {
     }
 }
 
-// --- MAPPING ENGINE ---
-let map;
-let userMarker;
-
-function requestLocation() {
-    const mapElement = document.getElementById('map');
-
-    if (!navigator.geolocation) {
-        mapElement.innerHTML = "<p>CRITICAL: GEOLOCATION NOT SUPPORTED BY HARDWARE</p>";
-        return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            // SUCCESS: Clear any error messages and init map
-            mapElement.classList.remove('location-disabled');
-            initLeafletMap(position.coords.latitude, position.coords.longitude);
-        },
-        (error) => {
-            // FAILURE: User denied or location is off
-            mapElement.classList.add('location-disabled');
-            
-            if (error.code === error.PERMISSION_DENIED) {
-                mapElement.innerHTML = `
-                    <div class="alert">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <p>SIGNAL LOST: CHECK LOCATION SETTINGS</p>
-                        <small>Permissions must be granted for Tactical Mapping.</small>
-                    </div>
-                `;
-            } else {
-                mapElement.innerHTML = "<p>SIGNAL INTERFERENCE: UNABLE TO FIX COORDINATES</p>";
-            }
-        }
-    );
-}
-
-function initLeafletMap(lat, lon) {
+function initLeafletMap(currentLat, currentLon) {
     if (!map) {
-        map = L.map('map').setView([lat, lon], 13);
+        map = L.map('map').setView([currentLat, currentLon], 13);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; CARTO'
         }).addTo(map);
 
-        userMarker = L.circleMarker([lat, lon], {
+        userMarker = L.circleMarker([currentLat, currentLon], {
             radius: 8,
             fillColor: "#00ff00", 
             color: "#fff",
@@ -103,15 +68,12 @@ function initLeafletMap(lat, lon) {
             fillOpacity: 1
         }).addTo(map);
     } else {
-        userMarker.setLatLng([lat, lon]);
-        map.panTo([lat, lon]);
+        userMarker.setLatLng([currentLat, currentLon]);
+        map.panTo([currentLat, currentLon]);
     }
 }
 
-// Start the sequence
-requestLocation();
-
-// --- CENTRAL ANALYTICS ENGINE ---
+// --- CENTRAL DATA ENGINE ---
 export function loadAnalyticsData() {
     return new Promise((resolve) => {
 
@@ -204,7 +166,6 @@ export function loadAnalyticsData() {
 function updateCommsIntercept() {
     //  Establish the API connection
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    
     const hardwareDisplay = document.getElementById('hardware-type');
     const freqDisplay = document.getElementById('frequency');
     const downlinkDisplay = document.getElementById('downlink');
