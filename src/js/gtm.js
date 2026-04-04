@@ -1,6 +1,6 @@
 const GTM_ID = 'GTM-WZ7CP98K';
 
-function launchGTM() {
+export function launchGTM() {
     if (window.gtmInitialized) return;
     
     (function(w,d,s,l,i){

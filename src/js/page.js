@@ -259,39 +259,3 @@ if (navigator.connection) {
     navigator.connection.addEventListener('change', updateCommsIntercept);
 }
 
-// --- UI EVENT LISTENERS ---
-document.addEventListener('DOMContentLoaded', () => {
-    const exploreBtn = document.querySelector('a[href="#explore"]');
-    const modalSection = document.getElementById('explore');
-    const closeBtn = document.getElementById('closeModal');
-
-    exploreBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        modalSection.classList.add('show');
-    });
-
-    closeBtn?.addEventListener('click', () => {
-        modalSection.classList.remove('show');
-    });
-
-    modalSection?.addEventListener('click', (e) => {
-        if (e.target === modalSection) modalSection.classList.remove('show');
-    });
-});
-
-
-const toggleBtn = document.getElementById('hero-toggle');
-const hero = document.getElementById('hero-section');
-const icon = toggleBtn.querySelector('i');
-
-toggleBtn.addEventListener('click', () => {
-    const isCollapsed = hero.classList.toggle('collapsed');
-
-    if (isCollapsed) {
-        icon.classList.remove('fa-window-minimize');
-        icon.classList.add('fa-window-restore');
-    } else {
-        icon.classList.remove('fa-window-restore');
-        icon.classList.add('fa-window-minimize');
-    }
-});
