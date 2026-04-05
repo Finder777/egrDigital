@@ -22,7 +22,7 @@
   },
  "globalHeaders": {
   "Permissions-Policy": "web-share=*",
-  "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https://*.tile.openstreetmap.g https://*.basemaps.cartocdn.com https://unpkg.com https://*.opensky-network.org; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; frame-src 'self' https://www.google.com https://www.google.co.uk https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://api.open-meteo.com https://*.opensky-network.org https://unpkg.com https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com;",
+  "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https://*.tile.openstreetmap.g https://*.basemaps.cartocdn.com https://unpkg.com https://*.opensky-network.org; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; frame-src 'self' https://www.google.com https://www.google.co.uk https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://api.open-meteo.com  https://opensky-network.org https://*.opensky-network.org https://unpkg.com https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com;",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "SAMEORIGIN",
