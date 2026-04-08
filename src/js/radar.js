@@ -1,39 +1,60 @@
 const RANGE_MILES = 50;
+// Replace with your actual Azure Function URL
+const AZURE_FUNCTION_URL = 'https://orbit-bbd0a7b8hqcvfheu.uksouth-01.azurewebsites.net/api/aircraft';
 
 export async function updateAirspace(userLat, userLon) {
+    // Matches id="radar-display" in your HTML
     const radar = document.getElementById('radar-display');
+    // Matches id="flight-data-rows" in your HTML
     const tableBody = document.getElementById('flight-data-rows');
+    
+    // Update the coordinate display in the AIRSPACE section
+    const coordDisplays = document.querySelectorAll('.airtracker .coord-display');
+    coordDisplays.forEach(display => {
+        display.textContent = `${userLat.toFixed(4)}, ${userLon.toFixed(4)}`;
+    });
+
     if (!radar || !tableBody) return;
 
-    // 1. Clear previous data
+    // 1. Clear previous visual data (removes existing .aircraft-blip divs)
     radar.querySelectorAll('.aircraft-blip').forEach(b => b.remove());
     tableBody.innerHTML = ''; 
 
     try {
-        // Calculate bounding box
-        const latDelta = RANGE_MILES / 69; 
-        const lonDelta = RANGE_MILES / (69 * Math.cos(userLat * Math.PI / 180));
-        const url = `https://opensky-network.org/api/states/all?lamin=${userLat - latDelta}&lomin=${userLon - lonDelta}&lamax=${userLat + latDelta}&lomax=${userLon + lonDelta}`;
-        
-        const response = await fetch(url);
+        // 2. Fetch from your Azure Middleware
+        const response = await fetch(AZURE_FUNCTION_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                latitude: userLat,
+                longitude: userLon
+            })
+        });
+
+        if (!response.ok) throw new Error(`Middleware error: ${response.status}`);
+
         const data = await response.json();
 
-        if (data.states) {
-            // Get current radar dimensions for accurate plotting
+        // 3. Process the 'aircraft' array from the Azure Function response
+        if (data.aircraft && Array.isArray(data.aircraft)) {
             const radarWidth = radar.offsetWidth;
             const center = radarWidth / 2;
 
-            data.states.forEach(flight => {
-                // OpenSky Data Mapping
+            data.aircraft.forEach(flight => {
+                // OpenSky State Vector indices
                 const [icao, callsign, country, time, lastPos, lon, lat, alt, onGround, velocity, track] = flight;
                 
-                // Distance Math
+                // 4. Distance and Plotting Math
                 const xDist = (lon - userLon) * (69 * Math.cos(userLat * Math.PI / 180));
                 const yDist = (lat - userLat) * 69;
                 const totalDist = Math.sqrt(xDist * xDist + yDist * yDist);
 
+                // Filter to the 50mi radar limit
                 if (totalDist <= RANGE_MILES) {
-                    // --- PART A: DRAW RADAR BLIP ---
+                    
+                    // --- DRAW RADAR BLIP ---
                     const blip = document.createElement('div');
                     blip.className = 'aircraft-blip';
                     
@@ -43,9 +64,11 @@ export async function updateAirspace(userLat, userLon) {
 
                     blip.style.left = `${xPx}px`;
                     blip.style.top = `${yPx}px`;
+                    // Optional: Add a title for hover effects
+                    blip.title = callsign ? callsign.trim() : icao.toUpperCase();
                     radar.appendChild(blip);
 
-                    // --- PART B: ADD TABLE ROW ---
+                    // --- ADD TABLE ROW ---
                     const altFt = alt ? Math.round(alt * 3.28084) : '---';
                     const speedKts = velocity ? Math.round(velocity * 1.94384) : '0';
                     const heading = track ? Math.round(track) + '°' : '---';
@@ -62,6 +85,6 @@ export async function updateAirspace(userLat, userLon) {
             });
         }
     } catch (err) {
-        console.error("Airspace scan failed:", err);
+        console.error("AIRSPACE intercept failed:", err);
     }
 }
