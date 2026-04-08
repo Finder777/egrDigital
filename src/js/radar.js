@@ -1,11 +1,8 @@
 const RANGE_MILES = 50;
-// Replace with your actual Azure Function URL
 const AZURE_FUNCTION_URL = 'https://orbit-bbd0a7b8hqcvfheu.uksouth-01.azurewebsites.net/api/aircraft';
 
 export async function updateAirspace(userLat, userLon) {
-    // Matches id="radar-display" in your HTML
     const radar = document.getElementById('radar-display');
-    // Matches id="flight-data-rows" in your HTML
     const tableBody = document.getElementById('flight-data-rows');
     
     // Update the coordinate display in the AIRSPACE section
