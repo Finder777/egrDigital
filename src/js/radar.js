@@ -72,6 +72,8 @@ export async function updateAirspace(userLat, userLon) {
 
                     const row = document.createElement('tr');
                     row.innerHTML = `
+                        <td>${icao.toUpperCase()}</td>
+                        <td>${country}</td>
                         <td>${callsign ? callsign.trim() : icao.toUpperCase()}</td>
                         <td>${altFt.toLocaleString()}</td>
                         <td>${speedKts}</td>
