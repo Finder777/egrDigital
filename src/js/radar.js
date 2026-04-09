@@ -41,7 +41,7 @@ export async function updateAirspace(userLat, userLon) {
 
             data.aircraft.forEach(flight => {
                 // OpenSky State Vector indices
-                const [icao, callsign, country, time, lastPos, lon, lat, alt, onGround, velocity, track] = flight;
+                const [icao, callsign, country, time, lastPos, lon, lat, alt, onGround, velocity, track, verticalRate] = flight;
                 
                 // 4. Distance and Plotting Math
                 const xDist = (lon - userLon) * (69 * Math.cos(userLat * Math.PI / 180));
@@ -78,6 +78,7 @@ export async function updateAirspace(userLat, userLon) {
                         <td>${altFt.toLocaleString()}</td>
                         <td>${speedKts}</td>
                         <td>${heading}</td>
+                        <td>${verticalRate ? Math.round(verticalRate * 196.8504) + ' ft/min' : '---'}</td>
                     `;
                     tableBody.appendChild(row);
                 }
