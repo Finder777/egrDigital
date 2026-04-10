@@ -1,4 +1,7 @@
 import { launchGTM } from '/js/gtm.js';
+import { loadAnalyticsData } from './page.js';
+
+//data policy stuff
 
 function initConsent() {
     const banner = document.getElementById('cookie-banner');
@@ -37,9 +40,10 @@ function initConsent() {
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
     initConsent();
+    loadAnalyticsData();
 });
 
-// --- UI EVENT LISTENERS ---
+// --- UI EVENT LISTENERS & STUFF ---
 
 document.addEventListener('DOMContentLoaded', () => {
     const exploreBtn = document.querySelector('a[href="#explore"]');

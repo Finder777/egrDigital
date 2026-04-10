@@ -83,12 +83,11 @@
       </section>
 
       <div>
-        <h1 class="orbitron-font">SITREP</h1>
+        <h1 class="orbitron-font">LOCSTAT</h1>
       </div>
       
       <main class="wrapper">
         <section class="card" id="analytics">
-          <h3>LOCSTAT</h3>
           <div class="analytics-data">
             <h4 class="heading">GPS COORDS</h4>
             <span class="coord-display" id="location"></span>            
@@ -104,16 +103,33 @@
         <section class="map-container">
           <div id="map"></div>
         </section>
+
+        <section>
+          <h3>POSITION LOG</h3>
+          <div class="table-wrapper">
+            <table id="flight-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                </tr>
+              </thead>
+              <tbody id="position-data-rows"></tbody>
+            </table>
+          </div>
+        </section>
+
       </main> 
 
       <div>
-        <h1 class="orbitron-font">AIRSPACE</h1>
+        <h1 class="orbitron-font">AIRTRACKER</h1>
       </div>
 
       <section class="airtracker"> 
         <div class="airspace-monitor">
-          <h3 class="radar-header">RADIO INTERCEPT ON 1090 MHZ</h3>
-          <p>@ <span class="coord-display">LOCATING...</span></p>
+          <h3 class="radar-header">TRANSPONDER LINK ON 1090 MHZ</h3>
+          <p>your airspace + 50 mile radius@ <span class="coord-display">LOCATING...</span></p>
           <div id="radar-display" class="radar-container">
             <div class="ring" style="width: 33%; height: 33%;"><span>15mi</span></div>
             <div class="ring" style="width: 66%; height: 66%;"><span>30mi</span></div>
@@ -125,7 +141,7 @@
         </div>
       
         <div class="traffic-log">
-          <h3 class="log-header">LIVE AIRSPACE INTERCEPT LOG</h3>
+          <h3 class="log-header">LIVE AIRSPACE LOG</h3>
             <div class="table-wrapper">
               <table id="flight-table">
                 <thead>
@@ -315,7 +331,6 @@
 
   <script src="js/main.js" type="module"></script>
   <script src="js/typewriter.js" type="module"></script>
-  <script src="js/radar.js" type="module"></script>
 
 </body>
 </html>
