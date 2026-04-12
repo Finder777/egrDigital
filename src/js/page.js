@@ -6,7 +6,6 @@ import { updateWeather } from './weatherEngine.js';
 import { updateAirspace } from './radar.js';
 import { initLeafletMap } from './map.js';
 
-
 // --- CENTRAL DATA ENGINE ---
 export function loadAnalyticsData() {
     return new Promise((resolve) => {
