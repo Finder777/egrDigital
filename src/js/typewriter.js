@@ -31,7 +31,7 @@ async function startTypewriter(containerId) {
 
     for (const line of lines) {
         // This preserves the .heading or #id styles
-        await typeLine(line, 250); 
+        await typeLine(line, 275); 
     }
 }
 
