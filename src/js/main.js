@@ -1,5 +1,5 @@
 import { launchGTM } from '/js/gtm.js';
-import { loadAnalyticsData } from './page.js';
+import { loadLocStat, saveLocStat, renderHistoryTable} from './page.js';
 
 //data policy stuff
 
@@ -37,45 +37,42 @@ function initConsent() {
     }
 }
 
-// Initialize on Load
+// --- INITIALIZE UI SYSTEMS ---
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Core Logic & Data
     initConsent();
-    loadAnalyticsData();
-});
+    loadLocStat();
+    renderHistoryTable();
 
-// --- UI EVENT LISTENERS & STUFF ---
-
-document.addEventListener('DOMContentLoaded', () => {
+    // 2. Modal Logic (Explore Button)
     const exploreBtn = document.querySelector('a[href="#explore"]');
     const modalSection = document.getElementById('explore');
     const closeBtn = document.getElementById('closeModal');
 
     exploreBtn?.addEventListener('click', (e) => {
         e.preventDefault();
-        modalSection.classList.add('show');
+        modalSection?.classList.add('show');
     });
 
-    closeBtn?.addEventListener('click', () => {
-        modalSection.classList.remove('show');
+    closeBtn?.addEventListener('click', () => modalSection?.classList.remove('show'));
+
+    // 3. Hero Toggle Logic
+    const toggleBtn = document.getElementById('hero-toggle');
+    const hero = document.getElementById('hero-section');
+    const icon = toggleBtn?.querySelector('i');
+
+    toggleBtn?.addEventListener('click', () => {
+        const isCollapsed = hero.classList.toggle('collapsed');
+        if (icon) {
+            icon.classList.toggle('fa-window-minimize', !isCollapsed);
+            icon.classList.toggle('fa-window-restore', isCollapsed);
+        }
     });
 
-    modalSection?.addEventListener('click', (e) => {
-        if (e.target === modalSection) modalSection.classList.remove('show');
-    });
-});
-
-const toggleBtn = document.getElementById('hero-toggle');
-const hero = document.getElementById('hero-section');
-const icon = toggleBtn.querySelector('i');
-
-toggleBtn.addEventListener('click', () => {
-    const isCollapsed = hero.classList.toggle('collapsed');
-
-    if (isCollapsed) {
-        icon.classList.remove('fa-window-minimize');
-        icon.classList.add('fa-window-restore');
+    const saveBtn = document.getElementById('send-locstat');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', saveLocStat);
     } else {
-        icon.classList.remove('fa-window-restore');
-        icon.classList.add('fa-window-minimize');
+        console.error("Save not available.");
     }
 });

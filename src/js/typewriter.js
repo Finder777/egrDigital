@@ -1,8 +1,8 @@
-import { loadAnalyticsData } from '/js/page.js';
+import { loadLocStat } from '/js/page.js';
 
 async function typeLine(el, speed) {
     return new Promise((resolve) => {
-        // 1. Grab the text that analytics.js just put there
+        // 1. Grab the text that page.js just put there
         const fullText = el.textContent.trim();
         if (!fullText) return resolve();
 
@@ -36,7 +36,7 @@ async function startTypewriter(containerId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadAnalyticsData().then(() => {
+    loadLocStat().then(() => {
         // Target the parent div containing your spans
         startTypewriter('analytics');
     });
