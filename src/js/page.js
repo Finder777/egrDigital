@@ -2,6 +2,8 @@
 export let currentLat = null;
 export let currentLon = null;
 export let gpsTimestamp = null;
+export let accuracy = null;
+export let altitude = null;
 
 import { getLocation } from './locationEngine.js';
 import { updateWeather } from './weatherEngine.js';
@@ -10,7 +12,7 @@ import { initLeafletMap } from './map.js';
 import { deviceStats } from './deviceStats.js';
 import { updateCommsIntercept } from './connectivity.js';
 
-// --- CENTRAL DATA ENGINE ---
+// --- LOCSTAT DATA ENGINE ---
 export async function loadLocStat() {
     const locationDisplay = document.getElementById('location');
     const dateDisplay = document.getElementById('current-date');
@@ -22,7 +24,8 @@ export async function loadLocStat() {
 
         currentLat = position.coords.latitude;
         currentLon = position.coords.longitude;
-
+        altitude = position.coords.altitude;
+        accuracy = position.coords.accuracy;
         gpsTimestamp = new Date(position.timestamp);
         
         if (dateDisplay) dateDisplay.textContent = `Date: ${gpsTimestamp.toLocaleDateString()}`;
@@ -60,7 +63,9 @@ export function saveLocStat() {
         const newEntry = { 
             timestamp: readableTime, 
             lat: currentLat.toFixed(4), 
-            lon: currentLon.toFixed(4) 
+            lon: currentLon.toFixed(4),
+            accuracy: accuracy.toFixed(2),
+            altitude: altitude ? altitude.toFixed(2) : 'N/A'
         };
 
         history.unshift(newEntry);
@@ -85,6 +90,8 @@ export function renderHistoryTable() {
                 <td>${entry.timestamp}</td>
                 <td>${entry.lat}</td>
                 <td>${entry.lon}</td>
+                <td>${entry.accuracy}</td>
+                <td>${entry.altitude}</td>
             </tr>
         `).join('');
     }

@@ -104,23 +104,26 @@
           <div id="map"></div>
         </section>
 
-        <div class="traffic-log">
-          <h3 class="log-header">POSITION LOG</h3>
-          <div class="table-wrapper">
-            <table id="position-table">
-              <thead>
-                <tr>
-                  <th>Timestamp</th>
-                  <th>Latitude</th>
-                  <th>Longitude</th>
-                  <th>Name</th>
-                </tr>
-              </thead>
-              <tbody id="position-data-rows"></tbody>
-            </table>
+        <section class="wide-table">
+          <div class="traffic-log">
+            <h3 class="log-header">POSITION LOG</h3>
+            <div class="table-wrapper">
+              <table id="table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Altitude (m)</th>
+                    <th>Accuracy</th>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody id="position-data-rows"></tbody>
+              </table>
+            </div>
           </div>
-        </div>
-
+        </section>
       </main> 
 
       <div class= "wrapper">
@@ -145,7 +148,7 @@
         <div class="traffic-log">
           <h3 class="log-header">LIVE AIRSPACE LOG</h3>
             <div class="table-wrapper">
-              <table id="flight-table">
+              <table id="table">
                 <thead>
                   <tr>
                     <th>ICAO</th>

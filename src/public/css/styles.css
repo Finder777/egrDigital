@@ -263,12 +263,13 @@ a:active {
 .wrapper{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 50px;
     margin-top: 20px;
 }
 
 .card {
-    flex:1;
+    flex:1 1 30%;
     font-style: italic;
     color: darkgray;
     background-color: #00000079;
@@ -300,7 +301,7 @@ a:active {
 }
 
 .map-container {
-    flex:2;
+    flex:2 1 60%;
     border-radius: 5px;
     border: 2px solid whitesmoke;
     overflow: hidden;
@@ -339,6 +340,10 @@ a:active {
 
 .leaflet-bar a:first-child {
     border-bottom: 1px solid darkgreen !important;
+}
+
+.wide-table {
+    flex: 1 1 100%;
 }
 
 .airtracker{
@@ -442,14 +447,14 @@ a:active {
     margin-top: 5px;
 }
 
-#flight-table {
+#table {
     width: 100%;
     border-collapse: collapse;
     font-size: 12px;
     min-width: 450px; /* Forces scrolling on small screens instead of squashing text */
 }
 
-#flight-table th, #flight-table td {
+#table th, #table td {
     text-align: left;
     padding: 10px 5px;
     white-space: nowrap; /* Keeps data on a single line */
@@ -457,7 +462,7 @@ a:active {
     color: #00ff00;
 }
 
-#flight-table thead th {
+#table thead th {
     background: rgba(0, 255, 0, 0.1);
     position: sticky; 
     border-bottom: 1px solid #00ff0033;
