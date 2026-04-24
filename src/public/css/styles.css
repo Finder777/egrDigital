@@ -269,7 +269,8 @@ a:active {
 }
 
 .card {
-    flex:1 1 30%;
+    flex:1;
+    min-width: 0;
     font-style: italic;
     color: darkgray;
     background-color: #00000079;
@@ -301,7 +302,7 @@ a:active {
 }
 
 .map-container {
-    flex:2 1 60%;
+    flex:2;
     border-radius: 5px;
     border: 2px solid whitesmoke;
     overflow: hidden;
@@ -343,7 +344,10 @@ a:active {
 }
 
 .wide-table {
-    flex: 1 1 100%;
+    display: flex;
+    min-width: 80%;
+    overflow-x: auto;
+    margin-top: 20px;
 }
 
 .airtracker{
@@ -428,7 +432,6 @@ a:active {
     border: 1px solid #00ff0033;
     background: rgba(0, 20, 0, 0.8);
     width: 100%;
-    max-width: 600px;
 }
 
 .log-header {
