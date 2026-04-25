@@ -56,6 +56,7 @@ export function saveLocStat() {
     // Check if we have the data ready
     if (currentLat !== null && currentLon !== null && gpsTimestamp !== null) {
         
+        const entryName = prompt("Enter a name for this location:", "My Location") || "UNNAMED";
         const readableTime = `${gpsTimestamp.toLocaleDateString()} ${gpsTimestamp.toLocaleTimeString()}`;
 
         let history = JSON.parse(localStorage.getItem('position_logs')) || [];
@@ -65,7 +66,8 @@ export function saveLocStat() {
             lat: currentLat.toFixed(4), 
             lon: currentLon.toFixed(4),
             accuracy: accuracy.toFixed(2),
-            altitude: altitude ? altitude.toFixed(2) : 'N/A'
+            altitude: altitude ? altitude.toFixed(2) : 'N/A',
+            name: entryName
         };
 
         history.unshift(newEntry);
@@ -79,20 +81,63 @@ export function saveLocStat() {
     }
 }
 
-// --- Table for saved locstat ---
+// --- Table to show the users saved locations ---
 export function renderHistoryTable() {
     const tableBody = document.getElementById('position-data-rows');
     const history = JSON.parse(localStorage.getItem('position_logs')) || [];
 
     if (tableBody) {
-        tableBody.innerHTML = history.map(entry => `
+        tableBody.innerHTML = history.map((entry, index) => `
             <tr>
                 <td>${entry.timestamp}</td>
                 <td>${entry.lat}</td>
                 <td>${entry.lon}</td>
                 <td>${entry.accuracy}</td>
                 <td>${entry.altitude}</td>
+                <td contenteditable= "true"
+                class="edit-name" 
+                    data-index="${index}" 
+                    style="color: aqua; font-weight: bold; cursor: text;">
+                    ${entry.name || 'UNNAMED'}
+                </td>
+                <td>
+                    <button class="delete-btn" data-index="${index}" style="background:none; border:none; color:red; cursor:pointer;">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </td>
             </tr>
         `).join('');
+
+        attachTableListeners();
     }
+}
+
+function attachTableListeners() {
+    
+    document.querySelectorAll('.edit-name').forEach(cell => {
+        cell.addEventListener('blur', (e) => {
+            const index = e.target.dataset.index;
+            const newName = e.target.textContent.trim();
+            
+            let history = JSON.parse(localStorage.getItem('position_logs')) || [];
+            if (history[index]) {
+                history[index].name = newName;
+                localStorage.setItem('position_logs', JSON.stringify(history));
+                console.log(`Entry ${index} renamed to: ${newName}`);
+            }
+        });
+    });
+
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const index = e.currentTarget.dataset.index;
+            let history = JSON.parse(localStorage.getItem('position_logs')) || [];
+            
+            if (confirm("Permanently delete this location entry?")) {
+                history.splice(index, 1); // Remove the specific item
+                localStorage.setItem('position_logs', JSON.stringify(history));
+                renderHistoryTable(); // Refresh the table
+            }
+        });
+    });
 }

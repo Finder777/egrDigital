@@ -572,6 +572,19 @@ tr:nth-child(even) {
     box-shadow: #111 0px 0px 10px;
 }
 
+.four:active {
+    transform: scale(0.95); 
+    background-color: #00ff00; 
+    color: #000;
+    box-shadow: 0 0 5px #00ff00;
+}
+
+.edit-name:focus {
+    outline: 1px solid #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 2px;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
