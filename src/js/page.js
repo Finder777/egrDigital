@@ -11,6 +11,7 @@ import { updateAirspace } from './radar.js';
 import { initLeafletMap } from './map.js';
 import { deviceStats } from './deviceStats.js';
 import { updateCommsIntercept } from './connectivity.js';
+import { startTypewriter } from './typewriter.js';
 
 // --- LOCSTAT DATA ENGINE ---
 export async function loadLocStat() {
@@ -43,7 +44,7 @@ export async function loadLocStat() {
         initLeafletMap(currentLat, currentLon);
         deviceStats();
         updateCommsIntercept();
-
+        startTypewriter('analytics');
         }
     
     catch (error) {

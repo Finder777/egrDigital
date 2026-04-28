@@ -1,5 +1,3 @@
-import { loadLocStat } from '/js/page.js';
-
 async function typeLine(el, speed) {
     return new Promise((resolve) => {
         
@@ -25,7 +23,7 @@ async function typeLine(el, speed) {
     });
 }
 
-async function startTypewriter(containerId) {
+export async function startTypewriter(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -33,13 +31,7 @@ async function startTypewriter(containerId) {
 
     for (const line of lines) {
         
-        await typeLine(line, 275); 
+        await typeLine(line, 100); 
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadLocStat().then(() => {
-        
-        startTypewriter('analytics');
-    });
-});
+;
