@@ -6,12 +6,7 @@ export let accuracy = null;
 export let altitude = null;
 
 import { getLocation } from './locationEngine.js';
-import { updateWeather } from './weatherEngine.js';
-import { updateAirspace } from './radar.js';
 import { initLeafletMap } from './map.js';
-import { deviceStats } from './deviceStats.js';
-import { updateCommsIntercept } from './connectivity.js';
-import { startTypewriter } from './typewriter.js';
 
 // --- LOCSTAT DATA ENGINE ---
 export async function loadLocStat() {
@@ -39,12 +34,7 @@ export async function loadLocStat() {
 
         document.querySelectorAll('.coord-display').forEach(el => {el.textContent = gpsCoords});
 
-        updateWeather(currentLat, currentLon);
-        updateAirspace(currentLat, currentLon);
         initLeafletMap(currentLat, currentLon);
-        deviceStats();
-        updateCommsIntercept();
-        startTypewriter('analytics');
         }
     
     catch (error) {

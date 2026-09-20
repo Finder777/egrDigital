@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRSPACE TRACKER | EGR Digital</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class= "wrapper">
+        <h1 class="orbitron-font">AIRTRACKER</h1>
+      </div>
+
+      <section class="airtracker"> 
+        <div class="airspace-monitor">
+          <h3 class="radar-header">TRANSPONDER LINK ON 1090 MHZ</h3>
+          <p>Airspace@ <span class="coord-display">LOCATING...</span></p>
+          <p>Radius: 50 miles</p>
+          <div id="radar-display" class="radar-container">
+            <div class="ring" style="width: 33%; height: 33%;"><span>15mi</span></div>
+            <div class="ring" style="width: 66%; height: 66%;"><span>30mi</span></div>
+            <div class="ring" style="width: 100%; height: 100%;"><span>50mi</span></div>
+            <div class="radar-sweep"></div>
+            <div class="radar-crosshair-v"></div>
+            <div class="radar-crosshair-h"></div>
+          </div>
+        </div>
+      
+        <div class="traffic-log">
+          <h3 class="log-header">LIVE AIRSPACE LOG</h3>
+            <div class="table-wrapper">
+              <table id="table">
+                <thead>
+                  <tr>
+                    <th>ICAO</th>
+                    <th>COUNTRY</th>
+                    <th>CALLSIGN</th>
+                    <th>ALTITUDE (FT)</th>
+                    <th>VELOCITY (KTS)</th>
+                    <th>HEADING</th>
+                    <th>VERTICAL RATE</th>
+                  </tr>
+                </thead>
+                <tbody id="flight-data-rows"></tbody>
+              </table>
+            </div>
+        </div>
+      </section>
+</body>

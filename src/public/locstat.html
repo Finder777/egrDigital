@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>EGR Digital- Specialised Web Design & Development Studio</title>
+  <meta name="title" content="Project Future Vision - EGR Digital">
+  <meta name="description" content="Welcome to EGR Digital, congrats on finding the domain.  We are a small, specialist web design & development studio building websites, webapps and webstores for small businesses.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egr.digital/">
+  <meta property="og:title" content="EGR Digital - Specialised Web Design & Development Studio for small businesses">
+  <meta property="og:description" content="EGR Digital, less politics, more dev">
+  <meta property="og:image" content="https://www.egr.digital/media/images/social-card.jpg">
+
+  <meta name="twitter:card" content="coming soon">
+  <meta name="twitter:url" content="https://egr.digital/">
+  <meta name="twitter:title" content="Project Future Vision - EGR Digital">
+  <meta name="twitter:description" content="For entreprenuers by entreprenuers, innovation isn't a straight path.">
+  <meta name="twitter:image" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.egr.digital/media/images/social-card.jpg">
+
+  <link rel="canonical" href="https://egr.digital/"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+  <div class="page-background">
+    <div class="greenfilter">
+      
+      <header class="header">
+        <nav class="nav">
+        <i class="fa-solid fa-bars fa-md"></i>  
+        </nav>
+        <h1 class="orbitron-font name">LOCSTAT</h1>
+        <i class="fa-solid fa-user-secret fa-md"></i>
+      </header>
+    
+      <div class="sidebar">
+        <a href="https://api.whatsapp.com/send?phone=447469533627" class="three"><i class="fa-brands fa-whatsapp fa-md"></i></a>
+        <a href="mailto:info@egr.digital" class="two"><i class="fa-solid fa-envelope fa-md"></i></a>
+      </div>    
+
+    <div class="map-wrapper">
+      <section class="box">
+          <div class="analytics-data">
+          <h4 class="heading">GPS COORDS</h4>
+          <span class="coord-display" id="location"></span>            
+          <div id="analytics">
+              <h4 class="heading">Locale</h4>
+              <span id="current-date"></span>
+              <br><span id="current-time"></span>
+              <br><span id="timezone"></span>
+              <br><span id="language"></span>
+          </div>
+          </div>
+          <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
+      </section>
+
+      <section class="map-container">
+          <div id="map"></div>
+      </section>
+    </div>
+
+    <section class="wide-table">
+          <div class="traffic-log">
+            <h3 class="log-header">POSITION LOG</h3>
+            <div class="table-wrapper">
+              <table id="table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Altitude (m)</th>
+                    <th>GPS Accuracy</th>
+                    <th>Location Name</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="position-data-rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+       
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="tagline"><em>Less talk, more dev</em></h2>
+      <span class="divider">|</span>
+      <p class="footer-notes">Developed by EGR Digital</p>
+      <span class="divider">|</span>
+      <a class="footer-notes" href="./public/dataPolicy.html">Data Policy</a>
+      <span class="divider">|</span>
+      <a class="footer-notes" href="terms.html">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-container hidden">
+    <div class="cookie-content">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3 class="orbitron-font">DATA PRIVACY PROTOCOL</h3>
+        <p>EGR Digital uses cookies and consent state to enable location tracking and analytics. Your choice is stored locally and must be accepted before location services are initialized.</p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="btn-accept">ACCEPT</button>
+            <button id="decline-cookies" class="btn-decline">DECLINE</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="js/typewriter.js" type="module"></script>
+  <script src="js/locstat.js" type="module"></script>
+
+</body>
+</html>
