@@ -88,6 +88,9 @@ body{
 }
 
 h1 {
+    font-size: clamp(2rem, 4vw, 10rem);
+    font-weight: 400;
+    color: #fff;
     margin: 0px 0px 0px 0px;
     width:fit-content;
 }
@@ -151,7 +154,8 @@ h4{
     margin: 0px auto 0px auto ;
     color:lightgray;
     font-size: 1rem;
-    font-weight: 200;  
+    font-weight: 200;
+    font-style: italic; 
 }
 
 h6{
