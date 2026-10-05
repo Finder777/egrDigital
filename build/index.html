@@ -2,19 +2,13 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WZ7CP98K');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" charset="UTF-8">
   <meta name="robots" content="index, follow">
   <meta name="format-detection" content="telephone=no">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>EGR Digital- Specialised Web Design & Development Studio</title>
+  <title>EGR Digital- Specialised Software Builder</title>
   <meta name="title" content="Project Future Vision - EGR Digital">
   <meta name="description" content="Welcome to EGR Digital, congrats on finding the domain.  We are a small, specialist web design & development studio building websites, webapps and webstores for small businesses.">
   
@@ -37,62 +31,229 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/typewriter-sYWa9y6A.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script type="module" crossorigin src="/assets/index-Biu4wgA1.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/typewriter-l0sNRNKZ.js">
 </head>
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ7CP98K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
   <div class="page-background">
     <div class="greenfilter">
       
-      <header>
-        <h1 class="orbitron-font">EGR DIGITAL </h1>
-      </header>  
+      <header class="header">
+        <nav class="nav">
+        <i class="fa-solid fa-bars fa-md"></i>  
+        </nav>
+        <h1 class="orbitron-font name"> EGR</h1>
+        <i class="fa-solid fa-user-secret fa-md"></i>
+      </header>
+
+      <div class="hero">
+        <div id="hero-content">
+          <div class="hero-header">
+            <h3 class="monospace">INNOVATE | CREATE | DEVELOP</h3>
+            </h3>
+            <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
+              <i class="fa-regular fa-window-minimize"></i>
+            </button>
+          </div>
+          <div id="hero-section">
+            <p class="body">Welcome to my digital workbench. I’m a software builder using AI and modern tech stack workflows to turn ideas into high-impact applications for the real world. 
+              My primary focus is TreeCanopy—an original creation engineered specifically for the arboricultural industry. Built with modern AI-driven development and grounded in actual trade needs, TreeCanopy shows what happens when software is designed to solve genuine problems for people who work with trees every day.</p>
+            <a href="https://treecanopy.app" class="four"><i class="fa-solid fa-globe fa-md"></i> : TreeCanopy</a>
+            <h5>Project Future Vision © <span id="current-year"></span> [all rights reserved]</h5>
+          </div>
+        </div>
+      </div>
+                
+      <div class="sidebar">
+        <a href="https://api.whatsapp.com/send?phone=447469533627" class="three"><i class="fa-brands fa-whatsapp fa-md"></i></a>
+        <a href="mailto:info@egr.digital" class="two"><i class="fa-solid fa-envelope fa-md"></i></a>
+      </div>
       
-      <section>
-        <h3 class="monospace">DESIGN | BUILD | SECURE | MAINTAIN</h3>
-        <p class="body">Websites, webstores, web apps and pen testing for your business.</p>
-        <a href="https://api.whatsapp.com/send?phone=447469533627" class="three"><i class="fa-brands fa-whatsapp fa-lg"></i>: Whatsapp</a>
-        <a href="preloader.html" class="two"><i class="fa-solid fa-globe fa-lg"></i> : Explore</a>
+      <section class="options" id="explore">
+        <div class="modal-content">
+          <button id="closeModal" class="close-button" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <p> Visit some sites built on wix.com</p>
+          <a href="https://edagramirez.wixsite.com/egrdigital">>  Digital Design Studio</a>
+          <a href="https://edagramirez.wixsite.com/lifeontheroad">>  #LifeOnTheRoad- Webstore</a>
+        </div>
+      </section>
+
+      <section class="wrapper">  
+         <div class="card" id="analytics">
+          <h3 id="weather">Met Data</h3>
+          <p>@ <span class="coord-display">LOCATING...</span></p>
+          <p id="weather-summary">SCANNING ATMOSPHERE...</p>
+          <p id="airTemp"></p>
+          <p id="maxTemp"></p>
+          <p id="cloud-cover"></p>
+          <p id="visibility"></p>
+          <p id="solar-energy"></p>  
+        </div>
+        
+        <div class="card" id="analytics">
+          <h3 class="heading">Your Device</h3>
+          <p><span id="screen-width"></span></p>
+          <p><span id="screen-height"></span></p>
+          <p><span id="user-agent"></span></p>
+        </div>
+      
+        <div class="card">
+          <h3 class="heading">Your Network Connection</h3>
+          <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
+          <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
+          <p>Downlink: <span id="downlink">UNKNOWN</span></p>
+          <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
+          <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
+          <p>Save Data: <span id="save-data">UNKNOWN</span></p>
+        </div>
       </section>
 
       <section>
-        <h5>Project Future Vision  <br>©<span id="current-year"></span><br>[all rights reserved]</h5>
+        <div class="video-feed-container">
+          <h3 class="tactical-header">REMOTE SURVEILLANCE: UKRAINE</h3>
+          <div class="video-wrapper">
+            <iframe 
+                  src="https://www.youtube.com/embed/I8idOXOcFZY?autoplay=1&mute=1&modestbranding=1&rel=0" 
+                  title="Ukraine Live Cam Feed"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen>
+              </iframe>
+              <div class="scanlines"></div>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <div id="analytics" class="analytics">
-          <span>Tracking Stats...</span>
-          <br><span id="current-date"></span>
-          <br><span id="current-time"></span>
-          <br><span id="timezone"></span>
-          <br><span id="location"></span>
-          <br><span id="language"></span>
-          <br><span id="screen-width"></span>
-          <br><span id="screen-height"></span>
-          <br><span id="user-agent"></span>
-        </div>  
+<section class="card">
+        <h3 class="heading">Mantracking Training Resources</h3>
+        <p>For more details visit <a href="https://thewayoftracking.com/">www.thewayoftracking.com</a>.  Kyt Lyn Walken is a global authority on the Art of Mantracking.</p>
+        <div class="wrapper">
+          <div class="card">
+            <iframe 
+              src="https://www.youtube.com/embed/ifMAzvJNw2s?si=a1zPGrYAm-fUzOLq&amp;controls=0" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card">
+            <iframe 
+              src="https://www.youtube.com/embed/PmoMT7XmX6g?si=smOTvjDn_QiqQzRG&amp;controls=0" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+             allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="cqb">
+        <h3 class="heading">CQB Training Resources</h3>
+        <div class="wrapper">
+          <div class="card">
+              <iframe 
+                src="https://www.youtube.com/embed/GBBahcNMSDI?si=eL4mjexYs2oe1xnC" 
+                title="CQB Training Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+          </div>
+          <div class="card">
+            <iframe 
+              src="https://www.youtube.com/embed/1_k4wYrx3Jo?si=CyTDRKI4sHLSUjjA" 
+              title="CQB Training Video 2" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="target-sets">
+        <div class="target-set-alpha">
+          <h3>Target Set Alpha >></h3>
+          <details class="live-sites-accordion" open>
+            <summary>Live Sites</summary>
+              <ul>
+                <li><a href="https://www.navico.com/">Navico</a></li>
+                <li><a href="https://www.bandg.com/en-gb/">BandG</a></li>
+                <li><a href="https://www.simrad-yachting.com/en-gb/">Simrad Yachting</a></li>
+                <li><a href="https://www.lowrance.com/">Lowrance</a></li>
+                <li><a href="https://www.c-map.com/en-gb/">C-MAP</a></li>
+                <li><a href="https://www.thewayoftracking.com/">The Way of Tracking</a></li>
+                <li><a href="https://whitehorseresearch.wordpress.com/">Insights Research Site</a></li>
+              </ul>
+          </details>
+        </div>
+        
+        <div class="target-set-bravo">
+          <h3>Target Set Bravo >> </h3>
+          <details class="live-sites-accordion" open>
+            <summary>Beyond Line Of Sight</summary>
+              <ul>
+                <li><a href="https://www.spiraxsarco.com">SpiraxSarco</a></li>
+                <li><a href="https://www.ubs.com">UBS</a></li>
+                <li><a href="https://www.fdmgroup.com">FDM Group</a></li>
+                <li><a href="https://www.army.mod.uk/learn-and-explore/about-the-army/corps-regiments-and-units/royal-corps-of-signals/14-signal-regiment-electronic-warfare/">14 Sigs</a></li>
+                <li><a href="https://www.nato.int/en">NATO</a></li>
+                <li><a href="https://www.armadainternational.com/2020/08/bushmaster-electronic-warfare-vehicles-for-dutch-army/">RNLA EW</a></li>
+              </ul>
+          </details>
+        </div>
+      
+        <div class="target-set-charlie">
+          <h3>Target Set Charlie >></h3>
+          <details class="live-sites-accordion" open>
+              <summary>In Development</summary>
+              <ul>
+                <li><a href="https://annasart506704076.wordpress.com/">Anna's Art</a></li>
+                <li><a href="https://ajaccountstaxation.wordpress.com/">AJAT</a></li>
+                <li><a href="#">EdSpace</a></li>
+              </ul>
+            </details>  
+        </div>
       </section>
 
     </div>
   </div>
-  
-  <footer>
+
+  <footer class="footer">
     <div class="footer-content">
-      <h2 class="tagline"><em>Less politics, more dev</em></h2>
+      <h2 class="tagline"><em>Less talk, more dev</em></h2>
       <span class="divider">|</span>
       <p class="footer-notes">Developed by EGR Digital</p>
       <span class="divider">|</span>
-      <a class="footer-notes" href="privacy.html">Privacy Policy</a>
+      <a class="footer-notes" href="./public/dataPolicy.html">Data Policy</a>
       <span class="divider">|</span>
       <a class="footer-notes" href="terms.html">Terms & Conditions</a>
     </div>
   </footer>
+
+  <div id="cookie-banner" class="cookie-container hidden">
+    <div class="cookie-content">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3 class="orbitron-font">DATA PRIVACY PROTOCOL</h3>
+        <p>EGR Digital uses cookies to optimize tactical web performance.  You must enable data collection for location, at the very least for this app to work, all other usage data is for de-bugging and analytics.</p>
+        <p>Transparency and education is a key pillar of our digital philosophy.  How many companies have you given your data to?</p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="btn-accept">ACCEPT</button>
+            <button id="decline-cookies" class="btn-decline">DECLINE</button>
+        </div>
+    </div>
+  </div>
 
 
 </body>
