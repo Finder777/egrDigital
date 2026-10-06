@@ -96,8 +96,8 @@ h1 {
 }
 
 .hero{
-    background-color: #00000079;
-    padding: 5px 10px;
+    background-color: #000000d7;
+    padding: 5% 10%;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
 }
@@ -141,9 +141,9 @@ h1 {
 }
 .monospace {
     font-family: "Courier New", Courier, monospace;
-    font-size: clamp(1.4rem, 3vw, 4rem);
     font-weight: 200;
     color:aqua;
+    margin: 20px auto;
 }
 
 h3{
@@ -156,6 +156,11 @@ h4{
     font-size: 1rem;
     font-weight: 200;
     font-style: italic; 
+}
+
+h5{
+    margin: 0px auto 0px auto ;
+    color:darkgray;
 }
 
 h6{
@@ -313,8 +318,8 @@ a:active {
 .heading{
     font-weight: 900;
     text-transform: uppercase;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .map-wrapper {
@@ -785,7 +790,6 @@ tr:nth-child(even) {
     }
     .monospace {
         font-family: "Courier New", Courier, monospace;
-        font-size: clamp(1rem, 1.2vw, 1.2rem);
         font-weight: 200;
         color:aqua;
     }
