@@ -124,7 +124,14 @@ h1 {
 
 #hero-content {
     transition: max-height 0.4s ease-out, opacity 0.3s ease;
-    max-height: 500px; 
+    max-height: 500px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#hero-section {
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    max-height: 520px;
     overflow: hidden;
 }
 
@@ -132,6 +139,7 @@ h1 {
     max-height: 0;
     opacity: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .collapsed .toggle-btn i::before {
@@ -773,6 +781,23 @@ tr:nth-child(even) {
         color: #fff;
     }
     
+    .hero-header {
+        align-items: flex-start;
+    }  
+
+    #hero-content,
+    #hero-section {
+        max-height: none;
+        height: auto;
+        overflow: visible;
+    }
+
+    #hero-section.collapsed {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
     .one, .two, .three, .four {
         padding: 10px 20px;
     }
@@ -796,6 +821,12 @@ tr:nth-child(even) {
     
     h3 {
         font-size: clamp(1rem, 3vw, 3rem);
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+        padding: 10px;
     }
 
     .target-sets {

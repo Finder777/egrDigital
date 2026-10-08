@@ -88,13 +88,16 @@ body{
 }
 
 h1 {
+    font-size: clamp(2rem, 4vw, 10rem);
+    font-weight: 400;
+    color: #fff;
     margin: 0px 0px 0px 0px;
     width:fit-content;
 }
 
 .hero{
-    background-color: #00000079;
-    padding: 5px 10px;
+    background-color: #000000d7;
+    padding: 5% 10%;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
 }
@@ -121,7 +124,14 @@ h1 {
 
 #hero-content {
     transition: max-height 0.4s ease-out, opacity 0.3s ease;
-    max-height: 500px; 
+    max-height: 500px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#hero-section {
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    max-height: 520px;
     overflow: hidden;
 }
 
@@ -129,6 +139,7 @@ h1 {
     max-height: 0;
     opacity: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .collapsed .toggle-btn i::before {
@@ -138,9 +149,9 @@ h1 {
 }
 .monospace {
     font-family: "Courier New", Courier, monospace;
-    font-size: clamp(1.4rem, 3vw, 4rem);
     font-weight: 200;
     color:aqua;
+    margin: 20px auto;
 }
 
 h3{
@@ -151,7 +162,13 @@ h4{
     margin: 0px auto 0px auto ;
     color:lightgray;
     font-size: 1rem;
-    font-weight: 200;  
+    font-weight: 200;
+    font-style: italic; 
+}
+
+h5{
+    margin: 0px auto 0px auto ;
+    color:darkgray;
 }
 
 h6{
@@ -309,8 +326,8 @@ a:active {
 .heading{
     font-weight: 900;
     text-transform: uppercase;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .map-wrapper {
@@ -764,6 +781,23 @@ tr:nth-child(even) {
         color: #fff;
     }
     
+    .hero-header {
+        align-items: flex-start;
+    }  
+
+    #hero-content,
+    #hero-section {
+        max-height: none;
+        height: auto;
+        overflow: visible;
+    }
+
+    #hero-section.collapsed {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
     .one, .two, .three, .four {
         padding: 10px 20px;
     }
@@ -781,13 +815,18 @@ tr:nth-child(even) {
     }
     .monospace {
         font-family: "Courier New", Courier, monospace;
-        font-size: clamp(1rem, 1.2vw, 1.2rem);
         font-weight: 200;
         color:aqua;
     }
     
     h3 {
         font-size: clamp(1rem, 3vw, 3rem);
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+        padding: 10px;
     }
 
     .target-sets {
