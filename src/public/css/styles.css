@@ -98,6 +98,8 @@ h1 {
 .hero{
     background-color: #000000d7;
     padding: 5% 10%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
 }
@@ -303,6 +305,7 @@ a:active {
     font-style: italic;
     color: darkgray;
     background-color: #00000079;
+    border: darkgrey 1px solid;
     padding: 10px 10px;
 }
 
@@ -323,7 +326,8 @@ a:active {
     margin-top: 20px;
 }
 
-.heading{
+.heading {
+    font-family: 'monospace', monospace;
     font-weight: 900;
     text-transform: uppercase;
     margin-top: 10px;
@@ -652,6 +656,7 @@ tr:nth-child(even) {
 
 .video-feed-container {
     margin-top: 20px;
+    margin-bottom: 20px;
     border: 1px solid #00ff00;
     padding: 10px;
     background: rgba(0, 20, 0, 0.8);
@@ -781,6 +786,13 @@ tr:nth-child(even) {
         color: #fff;
     }
     
+    .hero{
+        background-color: #000000d7;
+        padding: 5% 10%;
+        margin-bottom: 20px;
+        border: 1px solid #00ff00;
+    }
+
     .hero-header {
         align-items: flex-start;
     }  
