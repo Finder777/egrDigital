@@ -1,7 +1,7 @@
 * {
     font-size: 16px; /* 1em = 16px and p tags should sit at this */
-    font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
+    font-family:  'Roboto Mono', monospace;
+    color: lightgray;
     box-sizing: border-box;
 }
 
@@ -98,8 +98,8 @@ h1 {
 .hero{
     background-color: #000000d7;
     padding: 5% 10%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
 }
@@ -302,11 +302,10 @@ a:active {
 .card {
     flex:1;
     min-width: 0;
-    font-style: italic;
     color: darkgray;
     background-color: #00000079;
     border: darkgrey 1px solid;
-    padding: 10px 10px;
+    padding: 20px;
 }
 
 .card > h3 {
@@ -760,9 +759,9 @@ tr:nth-child(even) {
 
 @media screen and (max-width: 600px) {
     .body {
-        font-size: 1.25rem;
+        font-size: 1rem;
         width:auto;
-        max-width:90%;
+        max-width:95%;
     }
 
     .greenfilter {
@@ -790,6 +789,8 @@ tr:nth-child(even) {
         background-color: #000000d7;
         padding: 5% 10%;
         margin-bottom: 20px;
+        margin-left:auto;
+        margin-right:auto;
         border: 1px solid #00ff00;
     }
 
@@ -869,6 +870,7 @@ tr:nth-child(even) {
     .card > h3 {
         font-size: clamp(1.2rem, 2vw, 2rem);
         color: darkgray;
+        padding: 5% 10%;
     }
 
     .airtracker{
