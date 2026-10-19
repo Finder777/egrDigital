@@ -870,7 +870,6 @@ tr:nth-child(even) {
     .card > h3 {
         font-size: clamp(1.2rem, 2vw, 2rem);
         color: darkgray;
-        padding: 5% 10%;
     }
 
     .airtracker{
