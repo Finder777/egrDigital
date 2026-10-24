@@ -31,13 +31,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <script type="module" crossorigin src="/assets/index-Biu4wgA1.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="modulepreload" crossorigin href="/assets/typewriter-l0sNRNKZ.js">
+  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/assets/ui-BwotO_TF.js"></script>
 </head>
 
 <body>
@@ -46,10 +46,19 @@
     <div class="greenfilter">
       
       <header class="header">
-        <nav class="nav">
-        <i class="fa-solid fa-bars fa-md"></i>  
+        <nav class="nav" id="nav">
+          <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
         </nav>
-        <h1 class="orbitron-font"> #F10</h1>
+
+        <section id="menu">
+          <div class="menu-content">
+            <ul class="menu-items">
+              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+              <a href="tracking.html"><em>Mantracking Resources</em></a><br>
+            </ul>
+          </div>
+        </section>
+        <p class="orbitron-font">VERITAS</p>
         <i class="fa-solid fa-user-secret fa-md"></i>
       </header>
 
@@ -57,16 +66,17 @@
         <div id="hero-content">
           <h5>AI: 2026</h5>
           <div class="hero-header">
-            <h1 class="heading">THE AWAKENING</h1>
+            <h1 class="heading">THE AWAKENING. WEB DEVELOPMENT IS UPGRADING WITH NEW POSSIBILITIES NOW WITHIN OUR REACH</h1>
             <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
               <i class="fa-regular fa-window-minimize"></i>
             </button>
           </div>
           <h4>Project.Future.Vision © <span id="current-year"></span> [all rights reserved]</h4>
           <div id="hero-section">
-            <p class="body">Welcome to my digital workspace. I’m a software builder using AI with modern tech stack workflows to turn ideas into reality.</p>
-            <p class="body">My latest project is TreeCanopy— an original creation built specifically for the arboricultural industry. Together with fellow innovators, I've built an app using AI-driven development tools and first hand experience in the trade.</p>
-            <a href="https://treecanopy.app" class="four"><i class="fa-solid fa-globe fa-md"></i> : TreeCanopy</a>
+            <p class="body">Welcome to my OG webpage. This is going to be messy, I make no apologies. I grew up on an internet dial tone so you can wait just a minute longer.  The trouble with humans is that they are creatures of habit and comfort.</p>
+            <p class="body">If you expect the usual UX/ UI then you will be disappointed.  I'm anti everything and still handwrite as much code as possible.</p>
+            <p class="body">If you really need to look at work then click the button below.  Alternatively, browse the lists below for some examples of companies I've worked for and their respective sites.</p>
+            <a href="#explore" class="four"><i class="fa-solid fa-globe fa-md"></i> : Explore</a>
             <h5 class="monospace">INNOVATE | CREATE | DESIGN | DEVELOP</h5>
           </div>
         </div>
@@ -82,156 +92,20 @@
           <button id="closeModal" class="close-button" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
+          <p>Visit my latest project</p>
+          <a href="https://www.treecanopy.app/"><em>>  TreeCanopy</em></a><br>
           <p> Visit some sites built on wix.com</p>
-          <a href="https://edagramirez.wixsite.com/egrdigital">>  Digital Design Studio</a>
-          <a href="https://edagramirez.wixsite.com/lifeontheroad">>  #LifeOnTheRoad- Webstore</a>
-        </div>
-      </section>
-
-<div class="map-wrapper">
-      <section class="box">
-          <div class="analytics-data">
-          <h4 class="heading">GPS COORDS</h4>
-          <span class="coord-display" id="location"></span>            
-          <div id="analytics">
-              <h4 class="heading">Locale</h4>
-              <span id="current-date"></span>
-              <br><span id="current-time"></span>
-              <br><span id="timezone"></span>
-              <br><span id="language"></span>
-          </div>
-          </div>
-          <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
-      </section>
-
-      <section class="map-container">
-          <div id="map"></div>
-      </section>
-    </div>
-    
-    <section class="wide-table">
-          <div class="traffic-log">
-            <h3 class="log-header">POSITION LOG</h3>
-            <div class="table-wrapper">
-              <table id="table">
-                <thead>
-                  <tr>
-                    <th>Timestamp</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
-                    <th>Altitude (m)</th>
-                    <th>GPS Accuracy</th>
-                    <th>Location Name</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="position-data-rows"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-      <section class="wrapper">  
-
-        <div class="card">
-          <h3 class="heading">Your Network Connection</h3>
-          <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
-          <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
-          <p>Downlink: <span id="downlink">UNKNOWN</span></p>
-          <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
-          <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
-          <p>Save Data: <span id="save-data">UNKNOWN</span></p>
-        </div>
-
-        <div class="card" id="analytics">
-          <h3 class="heading">Your Device</h3>
-          <p><span id="screen-width"></span></p>
-          <p><span id="screen-height"></span></p>
-          <p><span id="user-agent"></span></p>
-        </div>
-      
-        <div class="card" id="analytics">
-          <h3 id="weather">Met Data</h3>
-          <p>@ <span class="coord-display">LOCATING...</span></p>
-          <p id="weather-summary">SCANNING ATMOSPHERE...</p>
-          <p id="airTemp"></p>
-          <p id="maxTemp"></p>
-          <p id="cloud-cover"></p>
-          <p id="visibility"></p>
-          <p id="solar-energy"></p>  
-        </div>
-      </section>
-
-      <section>
-        <div class="video-feed-container">
-          <h3 class="tactical-header">REMOTE SURVEILLANCE: UKRAINE</h3>
-          <div class="video-wrapper">
-            <iframe 
-                  src="https://www.youtube.com/embed/I8idOXOcFZY?autoplay=1&mute=1&modestbranding=1&rel=0" 
-                  title="Ukraine Live Cam Feed"
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen>
-              </iframe>
-              <div class="scanlines"></div>
-          </div>
-        </div>
-      </section>
-
-<section class="card">
-        <h3 class="heading">Mantracking Training Resources</h3>
-        <p>For more details visit <a href="https://thewayoftracking.com/">www.thewayoftracking.com</a>.  Kyt Lyn Walken is a global authority on the Art of Mantracking.</p>
-        <div class="wrapper">
-          <div class="card">
-            <iframe 
-              src="https://www.youtube.com/embed/ifMAzvJNw2s?si=a1zPGrYAm-fUzOLq&amp;controls=0" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="card">
-            <iframe 
-              src="https://www.youtube.com/embed/PmoMT7XmX6g?si=smOTvjDn_QiqQzRG&amp;controls=0" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-             allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </section>
-
-      <section class="cqb">
-        <h3 class="heading">CQB Training Resources</h3>
-        <div class="wrapper">
-          <div class="card">
-              <iframe 
-                src="https://www.youtube.com/embed/GBBahcNMSDI?si=eL4mjexYs2oe1xnC" 
-                title="CQB Training Video" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-          </div>
-          <div class="card">
-            <iframe 
-              src="https://www.youtube.com/embed/1_k4wYrx3Jo?si=CyTDRKI4sHLSUjjA" 
-              title="CQB Training Video 2" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
+          <a href="https://edagramirez.wixsite.com/egrdigital"><em>>  Digital Design Studio</em></a>
+          <a href="https://edagramirez.wixsite.com/lifeontheroad"><em>>  #LifeOnTheRoad- Webstore</em></a>
         </div>
       </section>
 
       <section class="target-sets">
-        <div class="target-set-alpha">
-          <h3>Target Set Alpha >></h3>
+        <div class="card">
+          <h3>Group A >></h3>
+          <p>These are examples of my work AND they are publicly accessible.  Obviously things change with time but I'm sure you get the gist.</p>
           <details class="live-sites-accordion" open>
-            <summary>Live Sites</summary>
+            <summary><em>Live Sites, publicly accessible</em></summary>
               <ul>
                 <li><a href="https://www.navico.com/">Navico</a></li>
                 <li><a href="https://www.bandg.com/en-gb/">BandG</a></li>
@@ -244,10 +118,11 @@
           </details>
         </div>
         
-        <div class="target-set-bravo">
-          <h3>Target Set Bravo >> </h3>
+        <div class="card">
+          <h3>Group B >> </h3>
+          <p>These are examples of my work in private domains.  You'll get substitutes where I cannot share anything.</p>
           <details class="live-sites-accordion" open>
-            <summary>Beyond Line Of Sight</summary>
+            <summary><em>Beyond Line Of Sight. Stuff I've worked in but in places you can't see.</em></summary>
               <ul>
                 <li><a href="https://www.spiraxsarco.com">SpiraxSarco</a></li>
                 <li><a href="https://www.ubs.com">UBS</a></li>
@@ -259,10 +134,11 @@
           </details>
         </div>
       
-        <div class="target-set-charlie">
-          <h3>Target Set Charlie >></h3>
+        <div class="card">
+          <h3>Group C >></h3>
+          <p> It's fake to pretend that everything is perfect and every project was a success.  Business can be tough so don't take it personally.</p>
           <details class="live-sites-accordion" open>
-              <summary>In Development</summary>
+              <summary><em>Abandoned.  Some ideas aren't worth investing in.</em></summary>
               <ul>
                 <li><a href="https://annasart506704076.wordpress.com/">Anna's Art</a></li>
                 <li><a href="https://ajaccountstaxation.wordpress.com/">AJAT</a></li>
@@ -272,6 +148,37 @@
         </div>
       </section>
 
+      <section class="target-sets">
+        
+          <div class="card">
+            <h3 class="tactical-header">REMOTE SURVEILLANCE: UKRAINE</h3>
+            <div class="video-wrapper">
+              <iframe 
+                    src="https://www.youtube.com/embed/I8idOXOcFZY?autoplay=1&mute=1&modestbranding=1&rel=0" 
+                    title="Ukraine Live Cam Feed"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+                <div class="scanlines"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="tactical-header">REMOTE SURVEILLANCE: NASA</h3>
+            <div class="video-wrapper">
+              <iframe 
+                    src="https://www.youtube.com/embed/awQzjn72bI0?si=YMoM-L958K7Cl7NK?autoplay=1&mute=1&modestbranding=1&rel=0" 
+                    title="NASA Live Cam Feed"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+                <div class="scanlines"></div>
+            </div>
+            </div>
+        </div>
+      </section>
     </div>
   </div>
 
