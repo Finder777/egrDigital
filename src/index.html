@@ -44,9 +44,18 @@
     <div class="greenfilter">
       
       <header class="header">
-        <nav class="nav">
-        <i class="fa-solid fa-bars fa-md"></i>  
+        <nav class="nav" id="nav">
+          <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
         </nav>
+
+        <section id="menu">
+          <div class="menu-content">
+            <ul class="menu-items">
+              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+              <a href="tracking.html"><em>Mantracking Resources</em></a><br>
+            </ul>
+          </div>
+        </section>
         <p class="orbitron-font">VERITAS</p>
         <i class="fa-solid fa-user-secret fa-md"></i>
       </header>
@@ -86,15 +95,6 @@
           <p> Visit some sites built on wix.com</p>
           <a href="https://edagramirez.wixsite.com/egrdigital"><em>>  Digital Design Studio</em></a>
           <a href="https://edagramirez.wixsite.com/lifeontheroad"><em>>  #LifeOnTheRoad- Webstore</em></a>
-        </div>
-      </section>
-
-      <section class="options" id="menu">
-        <div class="modal-content">
-          <button id="closeModal" class="close-button" aria-label="Close">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-          <a href="#tracking"><em>Tracking</em></a><br>
         </div>
       </section>
 
@@ -206,7 +206,7 @@
   </div>
 
   <script src="js/main.js" type="module"></script>
-  <script src="js/typewriter.js" type="module"></script>
+  <script src="js/ui.js" type="module"></script>
 
 </body>
 </html>
