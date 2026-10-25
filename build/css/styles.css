@@ -188,6 +188,20 @@ h1 {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
 }
+
+.image-one {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/image-one.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.image-two {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
 .monospace {
     font-family: "Courier New", Courier, monospace;
     font-weight: 200;
@@ -721,6 +735,7 @@ tr:nth-child(even) {
     ), linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0));
     background-size: 100% 4px, 3px 100%;
     pointer-events: none; /* Allows you to still click the video controls */
+    padding-left: 10px;
 }
 
 .footer {

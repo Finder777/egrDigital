@@ -36,8 +36,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/assets/ui-BwotO_TF.js"></script>
+  <script type="module" crossorigin src="/assets/index-QOhtccAR.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-BwotO_TF.js">
 </head>
 
 <body>
@@ -54,7 +55,7 @@
           <div class="menu-content">
             <ul class="menu-items">
               <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-              <a href="tracking.html"><em>Mantracking Resources</em></a><br>
+              <a href="tracking.html"><em>Trackers' Haven</em></a><br>
             </ul>
           </div>
         </section>
@@ -64,9 +65,9 @@
 
       <div class="hero">
         <div id="hero-content">
-          <h5>AI: 2026</h5>
+          <h5>FV: 2026</h5>
           <div class="hero-header">
-            <h1 class="heading">THE AWAKENING. WEB DEVELOPMENT IS UPGRADING WITH NEW POSSIBILITIES NOW WITHIN OUR REACH</h1>
+            <h1 class="heading">THE AWAKENING. IT TAKES A LONG WHILE TO GET ANYWHERE AND THERE ARE NO SHORTCUTS.</h1>
             <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
               <i class="fa-regular fa-window-minimize"></i>
             </button>
@@ -75,7 +76,7 @@
           <div id="hero-section">
             <p class="body">Welcome to my OG webpage. This is going to be messy, I make no apologies. I grew up on an internet dial tone so you can wait just a minute longer.  The trouble with humans is that they are creatures of habit and comfort.</p>
             <p class="body">If you expect the usual UX/ UI then you will be disappointed.  I'm anti everything and still handwrite as much code as possible.</p>
-            <p class="body">If you really need to look at work then click the button below.  Alternatively, browse the lists below for some examples of companies I've worked for and their respective sites.</p>
+            <p class="body">If you want to look at work then click the explore button below for my latest app.  Alternatively, browse the lists below for some examples of companies I've worked for and their respective sites.</p>
             <a href="#explore" class="four"><i class="fa-solid fa-globe fa-md"></i> : Explore</a>
             <h5 class="monospace">INNOVATE | CREATE | DESIGN | DEVELOP</h5>
           </div>
@@ -151,21 +152,23 @@
       <section class="target-sets">
         
           <div class="card">
-            <h3 class="tactical-header">REMOTE SURVEILLANCE: UKRAINE</h3>
+            <h3 class="tactical-header">NETSTAT</h3>
             <div class="video-wrapper">
-              <iframe 
-                    src="https://www.youtube.com/embed/I8idOXOcFZY?autoplay=1&mute=1&modestbranding=1&rel=0" 
-                    title="Ukraine Live Cam Feed"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-                <div class="scanlines"></div>
+              <div>
+                <div class="scanlines">
+                  <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
+                  <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
+                  <p>Downlink: <span id="downlink">UNKNOWN</span></p>
+                  <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
+                  <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
+                  <p>Save Data: <span id="save-data">UNKNOWN</span></p>
+                </div>
+              </div>   
             </div>
           </div>
 
           <div class="card">
-            <h3 class="tactical-header">REMOTE SURVEILLANCE: NASA</h3>
+            <h3 class="tactical-header">REMOTE WEBCAM: NASA</h3>
             <div class="video-wrapper">
               <iframe 
                     src="https://www.youtube.com/embed/awQzjn72bI0?si=YMoM-L958K7Cl7NK?autoplay=1&mute=1&modestbranding=1&rel=0" 
@@ -179,6 +182,7 @@
             </div>
         </div>
       </section>
+
     </div>
   </div>
 
@@ -206,7 +210,6 @@
         </div>
     </div>
   </div>
-
 
 </body>
 </html>
