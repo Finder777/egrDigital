@@ -914,6 +914,12 @@ tr:nth-child(even) {
         padding: 15px 15px;
     }
 
+    .map-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
     .wrapper{
         display: flex;
         flex-direction: column;
