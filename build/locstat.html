@@ -44,10 +44,19 @@
       
       <header class="header">
         <nav class="nav">
-        <i class="fa-solid fa-bars fa-md"></i>  
+          <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
         </nav>
-        <h1 class="orbitron-font name">LOCSTAT</h1>
-        <i class="fa-solid fa-user-secret fa-md"></i>
+        <section id="menu">
+          <div class="menu-content">
+            <ul class="menu-items">
+              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+              <a href="tracking.html"><em>Trackers' Haven</em></a><br>
+              <a href="locstat.html"><em>LOCSTAT</em></a><br>
+            </ul>
+          </div>
+        </section>
+        <h1 class="orbitron-font name">VERITAS</h1>
+        <a href="index.html"><i class="fa-solid fa-home fa-md"></i></a>
       </header>
     
       <div class="sidebar">
@@ -55,49 +64,56 @@
         <a href="mailto:info@egr.digital" class="two"><i class="fa-solid fa-envelope fa-md"></i></a>
       </div>    
 
-    <div class="map-wrapper">
-      <section class="box">
+    
+      <section>
+        <div class="map-wrapper">
           <div class="analytics-data">
-          <h4 class="heading">GPS COORDS</h4>
-          <span class="coord-display" id="location"></span>            
-          <div id="analytics">
+            <div class="card">
+              <h4 class="heading">GPS COORDS</h4>
+              <span class="coord-display" id="location"></span>
+            </div>          
+            <div id="analytics" class="card">
               <h4 class="heading">Locale</h4>
               <span id="current-date"></span>
               <br><span id="current-time"></span>
               <br><span id="timezone"></span>
               <br><span id="language"></span>
-          </div>
-          </div>
-          <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
-      </section>
-
-      <section class="map-container">
-          <div id="map"></div>
-      </section>
-    </div>
-
-    <section class="wide-table">
-          <div class="traffic-log">
-            <h3 class="log-header">POSITION LOG</h3>
-            <div class="table-wrapper">
-              <table id="table">
-                <thead>
-                  <tr>
-                    <th>Timestamp</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
-                    <th>Altitude (m)</th>
-                    <th>GPS Accuracy</th>
-                    <th>Location Name</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="position-data-rows"></tbody>
-              </table>
+            </div>
+            <div class="card">
+              <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
             </div>
           </div>
-        </section>
-       
+      
+          <div class="map-container">
+            <div id="map"></div>
+          </div>
+        </div>
+      </section>
+  
+
+      <section class="wide-table">
+        <div class="traffic-log">
+          <h3 class="log-header">POSITION LOG</h3>
+          <div class="table-wrapper">
+            <table id="table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                  <th>Altitude (m)</th>
+                  <th>GPS Accuracy</th>
+                  <th>Location Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="position-data-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    <br>
+    <br> 
     </div>
   </div>
 
@@ -125,7 +141,7 @@
     </div>
   </div>
 
-  <script src="../js/typewriter.js" type="module"></script>
+  <script src="../js/ui.js" type="module"></script>
   <script src="../js/locstat.js" type="module"></script>
 
 </body>
