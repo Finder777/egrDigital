@@ -20,7 +20,7 @@ export function updateCommsIntercept() {
     const effectiveSpeed = connection.effectiveType || '[unknown]';
     const downlink = connection.downlink || '0';
     const maxDownlinkCapacity = connection.downlinkMax || '[unknown]';
-    const rtt = connection.rtt || '--';
+    const rttValue = Number(connection.rtt) || 0;
     const saveData = connection.saveData ? 'ENABLED' : 'DISABLED';
 
     // Update the UI
@@ -43,14 +43,13 @@ export function updateCommsIntercept() {
     }
 
     if (rttDisplay) {
-        rttDisplay.textContent = `${rtt} ms`;
+        rttDisplay.textContent = `${connection.rtt ?? '--'} ms`;
     }
 
     if (saveDataDisplay) {
         saveDataDisplay.textContent = saveData;
     }
 
-    const rtt = connection.rtt || 0;
     const signalBarsEl = document.getElementById('signal-bars');
     const signalStatusEl = document.getElementById('signal-status');
 
@@ -58,15 +57,15 @@ export function updateCommsIntercept() {
         // Reset classes
         signalBarsEl.className = 'signal-bars';
         
-        if (rtt === 0 || rtt === '--') {
+        if (rttValue === 0 || connection.rtt == null) {
             signalStatusEl.textContent = 'NO TELEMETRY';
-        } else if (rtt < 70) {
+        } else if (rttValue < 70) {
             signalBarsEl.classList.add('level-4');
             signalStatusEl.textContent = 'EXCELLENT (LOW RTT)';
-        } else if (rtt < 150) {
+        } else if (rttValue < 150) {
             signalBarsEl.classList.add('level-3');
             signalStatusEl.textContent = 'NOMINAL';
-        } else if (rtt < 300) {
+        } else if (rttValue < 300) {
             signalBarsEl.classList.add('level-2');
             signalStatusEl.textContent = 'DEGRADED';
         } else {

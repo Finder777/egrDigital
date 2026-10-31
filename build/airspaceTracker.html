@@ -1,18 +1,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIRSPACE TRACKER | EGR Digital</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>EGR Digital- Airspace Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/assets/ui-CmWgHkF0.js"></script>
+  <script type="module" crossorigin src="/assets/consent-l0sNRNKZ.js"></script>
+  <script type="module" crossorigin src="/assets/connectivity-BgLONNFi.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/ui-0WirbDh7.css">
 </head>
 
 <body>
-  <div class= "wrapper">
-        <h1 class="orbitron-font">AIRTRACKER</h1>
-      </div>
+<header class="header">
+        <nav class="nav" id="nav">
+          <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
+        </nav>
+
+        <section id="menu">
+          <div class="menu-content">
+            <ul class="menu-items">
+              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><br>
+              <a href="tracking.html"><em>Trackers' Haven</em></a>
+              <a href="locstat.html"><em>LocStat</em></a>
+              <a href="airspaceTracker.html"><em>Airspace Tracker</em></a>
+            </ul>
+          </div>
+        </section>
+
+        <p class="orbitron-font">VERITAS</p>
+        <a href="index.html"><i class="fa-solid fa-home fa-md"></i></a>
+      </header>
 
       <section class="airtracker"> 
         <div class="airspace-monitor">
@@ -49,4 +69,32 @@
             </div>
         </div>
       </section>
-</body>
+
+ <footer class="footer">
+    <div class="footer-content">
+      <h2 class="tagline"><em>Less talk, more dev</em></h2>
+      <span class="divider">|</span>
+      <p class="footer-notes">Developed by EGR Digital</p>
+      <span class="divider">|</span>
+      <a class="footer-notes" href="./public/dataPolicy.html">Data Policy</a>
+      <span class="divider">|</span>
+      <a class="footer-notes" href="terms.html">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-container hidden">
+    <div class="cookie-content">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3 class="orbitron-font">DATA PRIVACY PROTOCOL</h3>
+        <p>EGR Digital uses cookies to optimize tactical web performance.  You must enable data collection for location, at the very least for this app to work, all other usage data is for de-bugging and analytics.</p>
+        <p>Transparency and education is a key pillar of our digital philosophy.  How many companies have you given your data to?</p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="btn-accept">ACCEPT</button>
+            <button id="decline-cookies" class="btn-decline">DECLINE</button>
+        </div>
+    </div>
+  </div>
+
+
+  </body>
+  </html>
