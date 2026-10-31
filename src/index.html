@@ -54,6 +54,7 @@
               <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><br>
               <a href="tracking.html"><em>Trackers' Haven</em></a><br>
               <a href="locstat.html"><em>LocStat</em></a>
+              <a href="airspaceTracker.html"><em>Airspace Tracker</em></a>
             </ul>
           </div>
         </section>
@@ -66,7 +67,7 @@
         <div id="hero-content">
           <h5>FV: 2026</h5>
           <div class="hero-header">
-            <h1 class="heading">IT TAKES A LONG WHILE TO GET ANYWHERE AND THERE ARE NO SHORTCUTS.</h1>
+            <h1 class="heading">IT TAKES A LONG WHILE TO GET SOMEWHERE AND THERE AREN'T ANY SHORTCUTS.</h1>
             <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
               <i class="fa-regular fa-window-minimize"></i>
             </button>
@@ -165,7 +166,17 @@
               </div>   
             </div>
           </div>
-
+          <div class="card">
+            <h3>SIGNAL HEALTH:</h3>
+            <div id="signal-bars" class="signal-bars" title="Estimated via RTT latency">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <span id="signal-status">CALIBRATING...</span>
+          </div>
+          
           <div class="card">
             <h3 class="tactical-header">REMOTE WEBCAM: NASA</h3>
             <div class="video-wrapper">

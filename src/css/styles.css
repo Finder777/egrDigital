@@ -727,7 +727,6 @@ tr:nth-child(even) {
     filter: brightness(0.8) contrast(1.2) sepia(1) hue-rotate(80deg); /* Forces a "Night Vision" green tint */
 }
 
-/* Subtle scanline overlay to match the HUD feel */
 .scanlines {
     position: absolute;
     top: 0;
@@ -742,6 +741,29 @@ tr:nth-child(even) {
     pointer-events: none; /* Allows you to still click the video controls */
     padding-left: 10px;
 }
+
+.signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 16px;
+}
+
+.signal-bars .bar {
+    width: 4px;
+    background-color: #333; /* Inactive bar color */
+    transition: background-color 0.3s ease;
+}
+
+.signal-bars .bar:nth-child(1) { height: 4px; }
+.signal-bars .bar:nth-child(2) { height: 8px; }
+.signal-bars .bar:nth-child(3) { height: 12px; }
+.signal-bars .bar:nth-child(4) { height: 16px; }
+
+.signal-bars.level-1 .bar:nth-child(1) { background-color: #ff3333; }
+.signal-bars.level-2 .bar:nth-child(-n+2) { background-color: #ffaa00; }
+.signal-bars.level-3 .bar:nth-child(-n+3) { background-color: #00ff00; }
+.signal-bars.level-4 .bar { background-color: #00ff00; }
 
 .footer {
     width: 100%;

@@ -49,6 +49,31 @@ export function updateCommsIntercept() {
     if (saveDataDisplay) {
         saveDataDisplay.textContent = saveData;
     }
+
+    const rtt = connection.rtt || 0;
+    const signalBarsEl = document.getElementById('signal-bars');
+    const signalStatusEl = document.getElementById('signal-status');
+
+    if (signalBarsEl && signalStatusEl) {
+        // Reset classes
+        signalBarsEl.className = 'signal-bars';
+        
+        if (rtt === 0 || rtt === '--') {
+            signalStatusEl.textContent = 'NO TELEMETRY';
+        } else if (rtt < 70) {
+            signalBarsEl.classList.add('level-4');
+            signalStatusEl.textContent = 'EXCELLENT (LOW RTT)';
+        } else if (rtt < 150) {
+            signalBarsEl.classList.add('level-3');
+            signalStatusEl.textContent = 'NOMINAL';
+        } else if (rtt < 300) {
+            signalBarsEl.classList.add('level-2');
+            signalStatusEl.textContent = 'DEGRADED';
+        } else {
+            signalBarsEl.classList.add('level-1');
+            signalStatusEl.textContent = 'HIGH LATENCY';
+        }
+    }
 }
 
 window.addEventListener('load', updateCommsIntercept);
