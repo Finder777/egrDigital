@@ -64,7 +64,7 @@ export function updateCommsIntercept() {
             signalStatusEl.textContent = 'EXCELLENT (LOW RTT)';
         } else if (rttValue < 150) {
             signalBarsEl.classList.add('level-3');
-            signalStatusEl.textContent = 'NOMINAL';
+            signalStatusEl.textContent = 'WORKABLE (MODERATE RTT)';
         } else if (rttValue < 300) {
             signalBarsEl.classList.add('level-2');
             signalStatusEl.textContent = 'DEGRADED';

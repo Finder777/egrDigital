@@ -36,10 +36,10 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/assets/ui-CmWgHkF0.js"></script>
+  <script type="module" crossorigin src="/assets/ui-63cpIXYO.js"></script>
   <script type="module" crossorigin src="/assets/consent-l0sNRNKZ.js"></script>
-  <script type="module" crossorigin src="/assets/connectivity-BgLONNFi.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/ui-0WirbDh7.css">
+  <script type="module" crossorigin src="/assets/connectivity-Dk4xcwE5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/ui-T-4-fZ2H.css">
 </head>
 
 <body>
@@ -59,6 +59,8 @@
               <a href="tracking.html"><em>Trackers' Haven</em></a>
               <a href="locstat.html"><em>LocStat</em></a>
               <a href="airspaceTracker.html"><em>Airspace Tracker</em></a>
+              <a href="https://www.treecanopy.app/"><em>TreeCanopy</em></a>
+              <a href="aboutme.html"><em>About Me</em></a>
             </ul>
           </div>
         </section>
@@ -68,19 +70,14 @@
       </header>
 
       <div class="hero">
-        <div id="hero-content">
+          <div id="hero-content">
           <h5>FV: 2026</h5>
           <div class="hero-header">
             <h1 class="heading">IT TAKES A LONG WHILE TO GET SOMEWHERE AND THERE AREN'T ANY SHORTCUTS.</h1>
-            <button id="hero-toggle" class="toggle-btn" title="Toggle Terminal">
-              <i class="fa-regular fa-window-minimize"></i>
-            </button>
           </div>
           <h4>Project.Future.Vision © <span id="current-year"></span> [all rights reserved]</h4>
           <div id="hero-section">
-            <p class="body">Welcome to my OG webpage. This is going to be messy, I make no apologies. I grew up on an internet dial tone so you can wait just a minute longer.  The trouble with humans is that they are creatures of habit and comfort.</p>
-            <p class="body">If you expect the usual UX/ UI then you will be disappointed.  I'm anti everything and still handwrite as much code as possible.</p>
-            <p class="body">If you want to look at work then click the explore button below for my latest app.  Alternatively, browse the lists below for some examples of companies I've worked for and their respective sites.</p>
+            <p class="body">Welcome to my OG website. This is going to be messy, I make no apologies. I grew up on an internet dial tone so you can wait just a minute longer.  The trouble with humans is that they are creatures of habit and comfort.</p>
             <a href="#explore" class="four"><i class="fa-solid fa-globe fa-md"></i> : Explore</a>
             <h5 class="monospace">INNOVATE | CREATE | DESIGN | DEVELOP</h5>
           </div>
@@ -105,73 +102,31 @@
         </div>
       </section>
 
-      <section class="target-sets">
+      <section class="card-grid">
         <div class="card">
-          <h3>Group A >></h3>
-          <p>These are examples of my work AND they are publicly accessible.  Obviously things change with time but I'm sure you get the gist.</p>
-          <details class="live-sites-accordion" open>
-            <summary><em>Live Sites, publicly accessible</em></summary>
-              <ul>
-                <li><a href="https://www.navico.com/">Navico</a></li>
-                <li><a href="https://www.bandg.com/en-gb/">BandG</a></li>
-                <li><a href="https://www.simrad-yachting.com/en-gb/">Simrad Yachting</a></li>
-                <li><a href="https://www.lowrance.com/">Lowrance</a></li>
-                <li><a href="https://www.c-map.com/en-gb/">C-MAP</a></li>
-                <li><a href="https://www.thewayoftracking.com/">The Way of Tracking</a></li>
-                <li><a href="https://whitehorseresearch.wordpress.com/">Insights Research Site</a></li>
-              </ul>
-          </details>
-        </div>
-        
-        <div class="card">
-          <h3>Group B >> </h3>
-          <p>These are examples of my work in private domains.  You'll get substitutes where I cannot share anything.</p>
-          <details class="live-sites-accordion" open>
-            <summary><em>Beyond Line Of Sight. Stuff I've worked in but in places you can't see.</em></summary>
-              <ul>
-                <li><a href="https://www.spiraxsarco.com">SpiraxSarco</a></li>
-                <li><a href="https://www.ubs.com">UBS</a></li>
-                <li><a href="https://www.fdmgroup.com">FDM Group</a></li>
-                <li><a href="https://www.army.mod.uk/learn-and-explore/about-the-army/corps-regiments-and-units/royal-corps-of-signals/14-signal-regiment-electronic-warfare/">14 Sigs</a></li>
-                <li><a href="https://www.nato.int/en">NATO</a></li>
-                <li><a href="https://www.armadainternational.com/2020/08/bushmaster-electronic-warfare-vehicles-for-dutch-army/">RNLA EW</a></li>
-              </ul>
-          </details>
-        </div>
-      
-        <div class="card">
-          <h3>Group C >></h3>
-          <p> It's fake to pretend that everything is perfect and every project was a success.  Business can be tough so don't take it personally.</p>
-          <details class="live-sites-accordion" open>
-              <summary><em>Abandoned.  Some ideas aren't worth investing in.</em></summary>
-              <ul>
-                <li><a href="https://annasart506704076.wordpress.com/">Anna's Art</a></li>
-                <li><a href="https://ajaccountstaxation.wordpress.com/">AJAT</a></li>
-                <li><a href="#">EdSpace</a></li>
-              </ul>
-            </details>  
-        </div>
-      </section>
-
-      <section class="target-sets">
+          <h3>Tactical Dashboard >></h3>
+          <p>
+      <section class="card-grid">
         
           <div class="card">
-            <h3 class="tactical-header">NETSTAT</h3>
-            <div class="video-wrapper">
-              <div>
-                <div class="scanlines">
-                  <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
-                  <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
-                  <p>Downlink: <span id="downlink">UNKNOWN</span></p>
-                  <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
-                  <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
-                  <p>Save Data: <span id="save-data">UNKNOWN</span></p>
-                </div>
-              </div>   
+            <h3 class="tactical-header">NETSTAT:</h3>
+
+            <div class="text-wrapper">
+              <div class="telemetry-panel">
+                <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
+                <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
+                <p>Downlink: <span id="downlink">UNKNOWN</span></p>
+                <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
+                <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
+                <p>Save Data: <span id="save-data">UNKNOWN</span></p>
+              </div>
+              <div class="scanlines" aria-hidden="true"></div>
             </div>
           </div>
+
           <div class="card">
             <h3>SIGNAL HEALTH:</h3>
+
             <div id="signal-bars" class="signal-bars" title="Estimated via RTT latency">
               <div class="bar"></div>
               <div class="bar"></div>
@@ -179,6 +134,7 @@
               <div class="bar"></div>
             </div>
             <span id="signal-status">CALIBRATING...</span>
+            <p><em>Estimated via RTT latency as RSSI is not available to the browser.</em></p>
           </div>
           
           <div class="card">
@@ -190,8 +146,8 @@
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
-                </iframe>
-                <div class="scanlines"></div>
+              </iframe>
+              <div class="scanlines"></div>
             </div>
             </div>
         </div>

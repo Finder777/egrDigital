@@ -36,9 +36,9 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/assets/ui-CmWgHkF0.js"></script>
+  <script type="module" crossorigin src="/assets/ui-63cpIXYO.js"></script>
   <script type="module" crossorigin src="/assets/consent-l0sNRNKZ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/ui-0WirbDh7.css">
+  <link rel="stylesheet" crossorigin href="/assets/ui-T-4-fZ2H.css">
 </head>
 
 <body>
@@ -47,25 +47,26 @@
     <div class="greenfilter">
       
       <header class="header">
-        <nav class="nav">
+        <nav class="nav" id="nav">
           <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
         </nav>
 
         <section id="menu">
           <div class="menu-content">
             <ul class="menu-items">
-              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><br>
               <a href="tracking.html"><em>Trackers' Haven</em></a>
               <a href="locstat.html"><em>LocStat</em></a>
               <a href="airspaceTracker.html"><em>Airspace Tracker</em></a>
+              <a href="https://www.treecanopy.app/"><em>TreeCanopy</em></a>
+              <a href="aboutme.html"><em>About Me</em></a>
+              <a href="index.html"><em>Home</em></a>
             </ul>
           </div>
         </section>
 
-        <h1 class="orbitron-font">VERITAS</h1>
-        <a href="../index.html">
-          <i class="fa-solid fa-home fa-md"></i>
-        </a>
+        <p class="orbitron-font">VERITAS</p>
+        <a href="index.html"><i class="fa-solid fa-home fa-md"></i></a>
       </header>
 
       <div class="hero image-one">
@@ -79,9 +80,9 @@
           </div>
           <h4>Project.Future.Vision © <span id="current-year"></span> [all rights reserved]</h4>
           <div id="hero-section">
-            <p class="body">When did you last do something entirely on your own? What are you skilled at? Truly? Not soft skill type talking- talk is cheap. Have you mastered anything to a point of expertise?</p>
             <p class="body">Welcome to the Trackers' reference page. These are training resources that will support the  development of your Tracking skills. Please note that I practice both mantracking and wildlife tracking on a frequent, recurring basis.</p>
-            <h5 class="monospace">FIND | ANALYSE | INTERPRET | EXPLOIT</h5>
+            <p class="body">This content is my own, unendorsed and solely represents my personal views and experience.</p>
+            <h2 class="monospace">FIND | ANALYSE | INTERPRET | EXPLOIT</h2>
           </div>
         </div>
       </div>
@@ -91,44 +92,56 @@
         <a href="mailto:info@egr.digital" class="two"><i class="fa-solid fa-envelope fa-md"></i></a>
       </div>
 
-      <section class="target-sets">
+      <section class="card-grid">
         <div class="card">
           <h2>What is Tracking?</h2>
-          <p>Tracking is the pursuit of a person or animal by following the physical track (spoor) and/or sign they have left behind.</p>
-          <p>Along with this definition of tracking there is a taxonomy that categorises different types of tracking.  This taxonomy is a broader conceptual framework that includes subjects in digital space and tracing across databases also.  Regardless of the taxonomical structure, all disciplines of tracking are rooted in the ancient Art of Cynegetics.</p>
-        </div>  
-        <div class="card">
-          <h2>Tracking Disciplines</h2>
-          <p>I focus specifically on 2 sub-disciplines: forensic mantracking and wildlife tracking.  So, whilst there are other disciplines, I'll list resources only for these areas.</p>
+          <h3>Tracking is understanding the track and/ or sign of a person or animal by finding, analysing, interpreting and exploiting evidence of their presence.</h3>
+          <p>Along with this definition of tracking there could be a taxonomy that categorises different types of tracking.  This taxonomy is a broader conceptual framework that includes subjects in digital space using technologies like drones.</p>
+          <p>Regardless of the taxonomical structure, all disciplines of tracking are rooted in the ancient Art of Cynegetics.</p>
           <p>Irrespective of definitions and taxonomies, tracking is a practical skill and time should not be wasted in excessive deliberation over academic frameworks or argumentation.</p>
         </div>
+
+        <div class="card">
+          <h2>Tracking Disciplines:</h2>
+          <h3>Mantracking</h3>
+          <h3>Wildlife Tracking</h3>
+          <p>I practice 2 types of tracking: forensic mantracking and wildlife tracking.  So, whilst there are other disciplines or applications, I'll list resources only for these areas.</p>
+        </div>
+
+      </section>
+
+      <section class="card-grid">
+        <div class="card">
+          <h2>What is Mantracking?</h2>
+          <p>Mantracking is the practice of following the trail of a person, typically in a wilderness or urban environment, by reading signs and evidence of their presence.</p>
+          <h2>Who are Mantrackers?</h2>
+          <p>Mantracking is a skill first and foremost.  Anyone can learn it with practice and dedication.</p>
+          <h2>Why is Mantracking Important?</h2>    
+          <p>It enables individuals to locate missing persons, track suspects, and navigate challenging terrains effectively.</p>
+          <h2>Applications of Mantracking</h2>
+          <p>Mantracking is used in law enforcement, military operations, search and rescue missions, wilderness survival, and urban tracking.</p>
+        </div>
+
         <div class="card">
           <img src="../media/images/image-two.jpg" alt="Track (spoor) identified by the author." class="image-two">
           <p>Track (spoor) identified by the author.</p>
         </div>
+
       </section>
 
-      <section class="banner">
+      <section class="card-grid">
         <div class="card">
-          <h2>What is Mantracking?</h2>
-          <p>Mantracking is a skill first and foremost.  You may hear it described as the art and science of tracking people through a terrain.  It involves interpreting footprints, broken vegetation, discarded items, and other signs to determine the direction, speed, and activities of a person. This is not a job role as such although there are some niche opportunites for trackers to apply their skills.</p>
+          <h2>What is Wildlife Tracking?</h2>
+          <p>Wildlife tracking is the practice of following the trail of animals, typically in a wilderness environment, by reading signs and evidence of their presence.</p>
+          <h2>Who are Wildlife Trackers?</h2>
+          <p>Wildlife tracking is used by various fields such as wildlife researchers, conservationists, hunters, and nature enthusiasts.</p>
+          <h2>Why is Wildlife Tracking Important?</h2>    
+          <p>It enables individuals to study animal behavior, monitor populations, and contribute to conservation efforts.</p>
         </div>
       </section>
 
-      <section class="banner">
-        <div class="card">
-          <h2>Who are Mantrackers?</h2>
-          <p>Mantracking is used by various fields such as law enforcement, military operations, search and rescue missions, wilderness survivalists and urban trackers.</p>
-        </div>
-      </section>
-      
-      <section class="banner">
-        <div class="card">
-          <h2>Why is Mantracking Important?</h2>    
-          <p>It enables individuals to locate missing persons, track suspects, and navigate challenging terrains effectively.</p>
-        </div>
-      </section>
-      
+
+
       <section class="card">
         <h3 class="heading">Tracking Videos</h3>
         <p>For more details visit <a href="https://thewayoftracking.com/">www.thewayoftracking.com</a>.  Kyt Lyn Walken is a global authority on the Art of Mantracking.</p>
