@@ -352,6 +352,7 @@ a:active {
 }
 
 .card {
+    position: relative;
     flex:1;
     min-width: 0;
     color: darkgray;
@@ -377,23 +378,47 @@ a:active {
     font-size: clamp(0.8rem, 1.5vw, 1.5rem);
 }
 
-.send {
+#analytics {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#analytics span {
+    display: block;
+    width: 100%;
+}
+
+.locstat-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 20px;
+}
+
+.locstat-actions .four {
+    flex: 1 1 180px;
+}
+
+.send {
+    margin-top: 0;
 }
 
 .map-wrapper {
     display: flex;
     flex-direction: row;
+    gap: 20px;
     height: auto;
-    border: 1px solid #00ff0033;
+    border: 1px solid rgba(0, 255, 0, 0.45);
+    box-shadow: inset 0 0 12px rgba(0, 255, 0, 0.08), 0 0 12px rgba(0, 255, 0, 0.06);
     background-color: #00000079;
     border-radius: 5px;
     overflow: hidden;
+    padding: 10px;
 }
 
 .map-container {
     flex:2;
-    border-radius: 5px;
     border: 2px solid whitesmoke;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);

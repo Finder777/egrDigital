@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>EGR Digital- Specialised Web Design & Development Studio</title>
+  <meta name="title" content="Project Future Vision - EGR Digital">
+  <meta name="description" content="Welcome to EGR Digital, congrats on finding the domain.  We are a small, specialist web design & development studio building websites, webapps and webstores for small businesses.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egr.digital/">
+  <meta property="og:title" content="EGR Digital - Specialised Web Design & Development Studio for small businesses">
+  <meta property="og:description" content="EGR Digital, less politics, more dev">
+  <meta property="og:image" content="https://www.egr.digital/media/images/social-card.jpg">
+
+  <meta name="twitter:card" content="coming soon">
+  <meta name="twitter:url" content="https://egr.digital/">
+  <meta name="twitter:title" content="Project Future Vision - EGR Digital">
+  <meta name="twitter:description" content="For entreprenuers by entreprenuers, innovation isn't a straight path.">
+  <meta name="twitter:image" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.egr.digital/media/images/social-card.jpg">
+
+  <link rel="canonical" href="https://egr.digital/"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script type="module" crossorigin src="/assets/tacticalDashboard-Dk90l88d.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-Bs6M4ZzA.js">
+  <link rel="modulepreload" crossorigin href="/assets/connectivity-BoC-N-fM.js">
+  <link rel="stylesheet" crossorigin href="/assets/ui-AOcxlUgw.css">
+</head>
+
+<body>
+
+  <div class="page-background">
+    <div class="greenfilter">
+      
+        <header class="header">
+            <nav class="nav" id="nav">
+                <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
+            </nav>
+
+            <section id="menu">
+                <div class="menu-content">
+                    <ul class="menu-items">
+                        <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><br>
+                        <a href="tracking.html"><em>Trackers' Haven</em></a>
+                        <a href="tacticalDashboard.html"><em>Tactical Dashboard</em></a>
+                        <br>
+                        <p>-----</p>
+                        <a href="index.html"><i class="fa-solid fa-home fa-md"> Home</i></a>
+                        <a href="https://www.treecanopy.app/"><em>TreeCanopy</em></a>
+                        <a href="aboutme.html"><em>About Me</em></a>
+                        <a href="dataPolicy.html"><em>Data Policy</em></a>
+                    </ul>
+                </div>
+            </section>
+
+            <p class="orbitron-font">VERITAS</p>
+            
+            <a href="index.html"><i class="fa-solid fa-home fa-md"></i></a>
+        </header>
+
+        <div class="hero">
+            <div id="hero-content">
+                <h5>FV: 2026</h5>
+                <div class="hero-header">
+                    <h1 class="heading">TACTICAL DASHBOARD</h1>
+                </div>
+                <h4>Project.Future.Vision © <span id="current-year"></span> [all rights reserved]</h4>
+                <div id="hero-section">
+                    <p class="body">Welcome to the dashboard. Use these components to read your calculated signal strength, gps coords and other basic details.</p>
+                    <h5 class="monospace">FIND | ANALYSE | INTERPRET | EXPLOIT</h5>
+                </div>
+            </div>
+        </div>
+                      
+        <div class="sidebar">
+            <a href="https://api.whatsapp.com/send?phone=447469533627" class="three"><i class="fa-brands fa-whatsapp fa-md"></i></a>
+            <a href="mailto:info@egr.digital" class="two"><i class="fa-solid fa-envelope fa-md"></i></a>
+        </div>
+        
+        <section class="card-grid">
+            <div class="card">
+                <h3>NETSTAT:</h3>
+                <div class="text-wrapper">
+                    <div class="telemetry-panel">
+                        <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
+                        <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
+                        <p>Downlink: <span id="downlink">UNKNOWN</span></p>
+                        <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
+                        <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
+                        <p>Save Data: <span id="save-data">UNKNOWN</span></p>
+                    </div>
+                </div>
+                <div class="scanlines" aria-hidden="true"></div>
+            </div>
+
+            <div class="card">
+                <h3>SIGNAL HEALTH:</h3>
+                <div class="text-wrapper">
+                    <span id="signal-status">CALIBRATING...</span>
+                    <div id="signal-bars" class="signal-bars" title="Estimated via RTT latency">
+                        <div class="bar"></div>                            <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="telemetry-panel">
+                        <p>Signal Strength: <span id="signal-strength">UNKNOWN</span></p>
+                        <p>Signal Quality: <span id="signal-quality">UNKNOWN</span></p>
+                        <p>Signal Type: <span id="signal-type">UNKNOWN</span></p>
+                    </div>
+                    <p><em>Estimated via RTT latency as RSSI is not available to the browser.</em></p>
+                    <div class="scanlines" aria-hidden="true"></div>
+                </div>
+            </div>
+          
+            <div class="card">
+                <h3 class="tactical-header">LOCALE:</h3>
+                <div class="text-wrapper">
+                    <div id="analytics">
+                        <span id="current-date"></span>
+                        <span id="current-time"></span>
+                        <span id="timezone"></span>
+                        <span id="language"></span>
+                    </div>
+                </div>
+                <div class="scanlines"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="map-wrapper">
+                <div>
+                    <div class="card">
+                        <h4 class="heading">GPS COORDS</h4>
+                        <span class="coord-display" id="location"></span>
+                        <div class="locstat-actions">
+                            <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
+                            <button id="copy-locstat" class="four send">COPY LOCSTAT</button>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+  
+        <section class="wide-table">
+            <div class="traffic-log">
+                <h3 class="log-header">POSITION LOG</h3>
+                <div class="table-wrapper">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Altitude (m)</th>
+                                <th>GPS Accuracy</th>
+                                <th>Location Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="position-data-rows"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="airtracker"> 
+            <div class="airspace-monitor">
+                <h3 class="radar-header">TRANSPONDER LINK ON 1090 MHZ</h3>
+                <p>Airspace@ <span class="coord-display">LOCATING...</span></p>
+                <p>Radius: 50 miles</p>
+                <div id="radar-display" class="radar-container">
+                    <div class="ring" style="width: 33%; height: 33%;">
+                        <span>15mi</span>
+                    </div>
+                    <div class="ring" style="width: 66%; height: 66%;">
+                        <span>30mi</span>
+                    </div>
+                    <div class="ring" style="width: 100%; height: 100%;">
+                        <span>50mi</span>
+                    </div>
+                    <div class="radar-sweep"></div>
+                </div>
+                <div class="radar-crosshair-v"></div>
+                <div class="radar-crosshair-h"></div>
+            </div>
+      
+            <div class="traffic-log">
+                <h3 class="log-header">LIVE AIRSPACE LOG</h3>
+                <div class="table-wrapper">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>ICAO</th>
+                                <th>COUNTRY</th>
+                                <th>CALLSIGN</th>
+                                <th>ALTITUDE (FT)</th>
+                                <th>VELOCITY (KTS)</th>
+                                <th>HEADING</th>
+                                <th>VERTICAL RATE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="flight-data-rows"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="tagline"><em>Less talk, more dev</em></h2>
+      <span class="divider">|</span>
+      <p class="footer-notes">Developed by EGR Digital</p>
+      <span class="divider">|</span>
+      <a class="footer-notes" href="./public/dataPolicy.html">Data Policy</a>
+      <span class="divider">|</span>
+      <a class="footer-notes" href="terms.html">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-container hidden">
+    <div class="cookie-content">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3 class="orbitron-font">DATA PRIVACY PROTOCOL</h3>
+        <p>EGR Digital uses cookies to optimize tactical web performance.  You must enable data collection for location, at the very least for this app to work, all other usage data is for de-bugging and analytics.</p>
+        <p>Transparency and education is a key pillar of our digital philosophy.  How many companies have you given your data to?</p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="btn-accept">ACCEPT</button>
+            <button id="decline-cookies" class="btn-decline">DECLINE</button>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>

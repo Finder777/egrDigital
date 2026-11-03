@@ -37,4 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
     closeMenu?.addEventListener('click', () => {
         menuSection?.classList.remove('show');
     });
+
 });
