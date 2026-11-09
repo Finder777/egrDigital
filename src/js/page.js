@@ -2,6 +2,7 @@ import {
     loadLocStat,
     saveLocStat,
     copyLocStat,
+    textLocStat,
     renderHistoryTable,
 } from './locstat.js';
 
@@ -22,11 +23,21 @@ export function bindLocStatControls() {
     if (copyBtn) {
         copyBtn.addEventListener('click', copyLocStat);
     }
+
+    const textLocationButton = document.getElementById('text-locstat');
+    if (textLocationButton) {
+        textLocationButton.addEventListener('click', textLocStat);
+    }
 }
 
 export function initPageAfterConsent() {
     loadLocStat({
         onReady: ({ currentLat, currentLon }) => {
+            const textLocationButton = document.getElementById('text-locstat');
+            if (textLocationButton) {
+                textLocationButton.disabled = false;
+            }
+
             updateWeather(currentLat, currentLon);
             updateAirspace(currentLat, currentLon);
             initLeafletMap(currentLat, currentLon);

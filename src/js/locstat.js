@@ -123,6 +123,18 @@ export async function copyLocStat() {
     }
 }
 
+export function textLocStat() {
+    if (currentLat === null || currentLon === null) {
+        console.warn('Cannot text location: No GPS data in memory.');
+        return false;
+    }
+
+    const mapLink = `https://maps.google.com/?q=${currentLat},${currentLon}`;
+    const message = `My current location: ${mapLink}`;
+    window.location.href = `sms:?body=${encodeURIComponent(message)}`;
+    return true;
+}
+
 export function renderHistoryTable() {
     const tableBody = document.getElementById('position-data-rows');
     const history = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];

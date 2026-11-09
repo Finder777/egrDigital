@@ -35,11 +35,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <script type="module" crossorigin src="/assets/tacticalDashboard-DYJES-HI.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="modulepreload" crossorigin href="/assets/ui-C6S9RLA2.js">
+  <script type="module" crossorigin src="/assets/tacticalDashboard-BFeb9dkO.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/ui-O5BCFy3w.js">
   <link rel="modulepreload" crossorigin href="/assets/connectivity-BoC-N-fM.js">
-  <link rel="stylesheet" crossorigin href="/assets/ui-DOXEExrz.css">
+  <link rel="stylesheet" crossorigin href="/assets/consent-Euy52i0z.css">
 </head>
 
 <body>
@@ -47,31 +46,32 @@
   <div class="page-background">
     <div class="greenfilter">
       
-        <header class="header">
-            <nav class="nav" id="nav">
-                <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
-            </nav>
+              <header class="header">
+        <nav class="nav" id="nav">
+          <i id="menuIcon" class="fa-solid fa-bars fa-md"></i>  
+        </nav>
 
-            <section id="menu">
-                <div class="menu-content">
-                    <ul class="menu-items">
-                        <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><br>
-                        <a href="tracking.html"><em>Trackers' Reference Guide</em></a>
-                        <a href="tacticalDashboard.html"><em>Tactical Dashboard</em></a>
-                        <br>
-                        <p>-----</p>
-                        <a href="index.html"><i class="fa-solid fa-home fa-md"> Home</i></a>
-                        <a href="https://www.treecanopy.app/"><em>TreeCanopy</em></a>
-                        <a href="aboutme.html"><em>About Me</em></a>
-                        <a href="dataPolicy.html"><em>Data Policy</em></a>
-                    </ul>
-                </div>
-            </section>
+        <section id="menu">
+          <div class="menu-content">
+            <ul class="menu-items">
+              <button id="closeMenu" class="close-button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><br>
+              <a href="index.html"><i class="fa-solid fa-home fa-md"></i> Home</a>
+              <a href="tracking.html"><em>Trackers Reference Guide</em></a>
+              <a href="tacticalDashboard.html"><em>Tactical Dashboard</em></a>
+              <br>
+              <p>-----</p>
+              <br>
+              <a href="aboutme.html"><em>About Me</em></a>
+              <a href="dataPolicy.html"><em>Data Policy</em></a>
+              <a href="https://www.treecanopy.app/"><em>TreeCanopy</em></a>
+            </ul>
+          </div>
+        </section>
 
-            <p class="orbitron-font">VERITAS</p>
-            
-            <a href="index.html"><i class="fa-solid fa-home fa-md"></i></a>
-        </header>
+        <img id="logo" src="media/images/logo.jpeg" alt="VERITAS Logo"></img>
+        
+        <a href="index.html"><i class="fa-solid fa-home fa-md"></i></a>
+      </header>
 
         <div class="hero">
             <div id="hero-content">
@@ -94,7 +94,46 @@
             <a href="https://api.whatsapp.com/send?phone=447469533627" class="three"><i class="fa-brands fa-whatsapp fa-md"></i></a>
             <a href="mailto:info@egr.digital" class="two"><i class="fa-solid fa-envelope fa-md"></i></a>
         </div>
-        
+              
+        <section class="card-grid">
+
+            <div class="card text-wrapper">
+                <h3 class="tactical-header">LOCALE:</h3>
+                <div id="analytics">
+                    <span id="current-date"></span>
+                    <span id="current-time"></span>
+                    <span id="timezone"></span>
+                    <span id="language"></span>
+                </div>
+                <div class="scanlines" aria-hidden="true"></div>
+            </div>
+            
+            <div class="card text-wrapper">
+                <h3 class="tactical-header">GPS COORDS:</h3>
+                <span class="coord-display" id="location"></span>
+                    <div class="locstat-actions">
+                        <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
+                        <button id="copy-locstat" class="four send">COPY LOCSTAT</button>
+                        <button id="text-locstat" class="four send" type="button" disabled>SHARE MY LOCATION</button>
+                    </div>
+                <p>Opens your messaging app with a map link. Review it before sending.</p>
+                <div class="scanlines" aria-hidden="true"></div>
+            </div>
+                            
+        </section>
+
+        <section>
+            <div class="map-wrapper">
+                <div>
+                    
+                </div>
+      
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+  
         <section class="card-grid">
             <div class="card">
                 <h3>NETSTAT:</h3>
@@ -130,40 +169,9 @@
                     <div class="scanlines" aria-hidden="true"></div>
                 </div>
             </div>
-          
-            <div class="card">
-                <h3 class="tactical-header">LOCALE:</h3>
-                <div class="text-wrapper">
-                    <div id="analytics">
-                        <span id="current-date"></span>
-                        <span id="current-time"></span>
-                        <span id="timezone"></span>
-                        <span id="language"></span>
-                    </div>
-                </div>
-                <div class="scanlines"></div>
-            </div>
-        </section>
+        </section>  
 
-        <section>
-            <div class="map-wrapper">
-                <div>
-                    <div class="card">
-                        <h4 class="heading">GPS COORDS</h4>
-                        <span class="coord-display" id="location"></span>
-                        <div class="locstat-actions">
-                            <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
-                            <button id="copy-locstat" class="four send">COPY LOCSTAT</button>
-                        </div>
-                    </div>
-                </div>
-      
-                <div class="map-container">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </section>
-  
+
         <section class="wide-table">
             <div class="traffic-log">
                 <h3 class="log-header">POSITION LOG</h3>
