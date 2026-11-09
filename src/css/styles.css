@@ -142,7 +142,7 @@ body{
 }
 
 h1 {
-    font-size: clamp(2rem, 4vw, 10rem);
+    font-size: clamp(4rem, 6vw, 10rem);
     color: #fff;
 }
 
@@ -252,6 +252,7 @@ h1 {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/twotHomePage.jpg');
     background-size: cover;
     background-position: center;
+    height:500px;
 }
 
 .monospace {
@@ -411,8 +412,16 @@ a:active {
     padding: 20px;
 }
 
+.card > h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
 .card > h3 {
   font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.content {
+    padding: 5% 10%;
 }
 
 .card > iframe {
@@ -661,10 +670,6 @@ tr:nth-child(even) {
     text-align: center;
 }
 
-.two, .three > i {
-    font-size: 1.5rem;
-}
-
 .one {
     background-color: red;
     text-decoration:none;
@@ -680,9 +685,9 @@ tr:nth-child(even) {
 }
 
 .two:hover{
-    background-color: aqua;
+    background-color: teal;
     text-decoration: underline;
-    color:darkgreen;
+    color:black;
 }
 
 .three {
