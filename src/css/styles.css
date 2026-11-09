@@ -68,7 +68,7 @@ body{
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 10px 16px 10px 25px;
-    background-color: #000000e0;
+    background-color: #000000;
 }
 
 #menu {
@@ -280,8 +280,7 @@ h5{
 }
 
 h6{
-    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
-    max-width: 60%;
+    font-size: clamp(0.8rem, 1.1vw, 1.2rem);
     margin-top: 30px;
     color:lightgray;
 }
@@ -1068,6 +1067,7 @@ tr:nth-child(even) {
         gap: auto;
         margin-top: 30px;
         margin-bottom: 30px;
+        height:auto;
     }
 
     .airspace-monitor, .target-set-alpha, .target-set-bravo, .target-set-charlie {
