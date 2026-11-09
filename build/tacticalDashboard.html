@@ -35,10 +35,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <script type="module" crossorigin src="/assets/tacticalDashboard-BFeb9dkO.js"></script>
+  <script type="module" crossorigin src="/assets/tacticalDashboard-BEQ142Pr.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/ui-O5BCFy3w.js">
   <link rel="modulepreload" crossorigin href="/assets/connectivity-BoC-N-fM.js">
-  <link rel="stylesheet" crossorigin href="/assets/consent-Euy52i0z.css">
+  <link rel="stylesheet" crossorigin href="/assets/consent-D_NxnQm7.css">
 </head>
 
 <body>
@@ -84,7 +84,7 @@
                 </div>
                 <h4>Project.Future.Vision © <span id="current-year"></span> [all rights reserved]</h4>
                 <div id="hero-section">
-                    <p class="body">Welcome to the dashboard. This is meant to help you when you are outdoors and in need of basic information in case of an emergency.  Use these components to read your calculated signal strength, gps coords and other basic details.</p>
+                    <p class="body">Welcome to the dashboard. This is meant to help you when you are outdoors and in need of basic information in case of an emergency.  Allow your location on your phone, get a GPS fix and share it with others.</p>
                     <h5 class="monospace">FIND | ANALYSE | INTERPRET | EXPLOIT</h5>
                 </div>
             </div>
@@ -111,66 +111,27 @@
             <div class="card text-wrapper">
                 <h3 class="tactical-header">GPS COORDS:</h3>
                 <span class="coord-display" id="location"></span>
-                    <div class="locstat-actions">
-                        <button id="send-locstat" class="four send">SAVE LOCSTAT</button>
-                        <button id="copy-locstat" class="four send">COPY LOCSTAT</button>
-                        <button id="text-locstat" class="four send" type="button" disabled>SHARE MY LOCATION</button>
-                    </div>
-                <p>Opens your messaging app with a map link. Review it before sending.</p>
                 <div class="scanlines" aria-hidden="true"></div>
+            </div>
+
+            <div class="card text-wrapper">
+                <div class="locstat-actions">
+                    <button id="send-locstat" class="four send">SAVE LOCATION</button>
+                    <button id="copy-locstat" class="four send">COPY LOCATION</button>
+                    <button id="text-locstat" class="four send" type="button" disabled>SHARE LOCATION</button>
+                </div>
+                <p><em>Share my location opens your messaging app with a map link.</em></p>
             </div>
                             
         </section>
 
         <section>
-            <div class="map-wrapper">
-                <div>
-                    
-                </div>
-      
+            <div class="map-wrapper">      
                 <div class="map-container">
                     <div id="map"></div>
                 </div>
             </div>
         </section>
-  
-        <section class="card-grid">
-            <div class="card">
-                <h3>NETSTAT:</h3>
-                <div class="text-wrapper">
-                    <div class="telemetry-panel">
-                        <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
-                        <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
-                        <p>Downlink: <span id="downlink">UNKNOWN</span></p>
-                        <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
-                        <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
-                        <p>Save Data: <span id="save-data">UNKNOWN</span></p>
-                    </div>
-                </div>
-                <div class="scanlines" aria-hidden="true"></div>
-            </div>
-
-            <div class="card">
-                <h3>SIGNAL HEALTH:</h3>
-                <div class="text-wrapper">
-                    <span id="signal-status">CALIBRATING...</span>
-                    <div id="signal-bars" class="signal-bars" title="Estimated via RTT latency">
-                        <div class="bar"></div>                            <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-
-                    <div class="telemetry-panel">
-                        <p>Signal Strength: <span id="signal-strength">UNKNOWN</span></p>
-                        <p>Signal Quality: <span id="signal-quality">UNKNOWN</span></p>
-                        <p>Signal Type: <span id="signal-type">UNKNOWN</span></p>
-                    </div>
-                    <p><em>Estimated via RTT latency as RSSI is not available to the browser.</em></p>
-                    <div class="scanlines" aria-hidden="true"></div>
-                </div>
-            </div>
-        </section>  
-
 
         <section class="wide-table">
             <div class="traffic-log">
@@ -194,8 +155,48 @@
             </div>
         </section>
 
-        <section class="airtracker"> 
-            <div class="airspace-monitor">
+        <section class="card-grid">
+
+            <div class="card text-wrapper">
+                <h3>NETSTAT:</h3>
+                <div class="text-wrapper">
+                    <div class="telemetry-panel">
+                        <p>Hardware Connection Type: <span id="hardware-type">UNKNOWN</span></p>
+                        <p>Frequency Band: <span id="frequency">UNKNOWN</span></p>
+                        <p>Downlink: <span id="downlink">UNKNOWN</span></p>
+                        <p>Max Downlink Capacity: <span id="max-downlink-capacity">UNKNOWN</span></p>
+                        <p>Round Trip Time: <span id="rtt">UNKNOWN</span></p>
+                        <p>Save Data: <span id="save-data">UNKNOWN</span></p>
+                    </div>
+                    <div class="scanlines" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <div class="card text-wrapper">
+                <h3>SIGNAL HEALTH:</h3>
+                <div class="text-wrapper">
+                    <span id="signal-status">CALIBRATING...</span>
+                    <div id="signal-bars" class="signal-bars" title="Estimated via RTT latency">
+                        <div class="bar"></div>                            
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="telemetry-panel">
+                        <p>Signal Strength: <span id="signal-strength">UNKNOWN</span></p>
+                        <p>Signal Quality: <span id="signal-quality">UNKNOWN</span></p>
+                        <p>Frequency Band: <span id="signal-type">UNKNOWN</span></p>
+                    </div>
+                    <p><em>Estimated via RTT latency as RSSI is not available to the browser.</em></p>
+                    <div class="scanlines" aria-hidden="true"></div>
+                </div>
+            </div>
+
+        </section>  
+
+        <section class="airtracker card-grid"> 
+            <div class="airspace-monitor text-wrapper card">
                 <h3 class="radar-header">TRANSPONDER LINK ON 1090 MHZ</h3>
                 <p>Airspace@ <span class="coord-display">LOCATING...</span></p>
                 <p>Radius: 50 miles</p>
@@ -215,7 +216,7 @@
                 <div class="radar-crosshair-h"></div>
             </div>
       
-            <div class="traffic-log">
+            <div class="traffic-log text-wrapper card">
                 <h3 class="log-header">LIVE AIRSPACE LOG</h3>
                 <div class="table-wrapper">
                     <table id="table">
@@ -235,6 +236,7 @@
                 </div>
             </div>
         </section>
+
     </div>
   </div>
 

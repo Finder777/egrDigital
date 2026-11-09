@@ -54,7 +54,7 @@ body{
 .greenfilter{
     background-color: #00ff0d1a;
     min-height: 100vh;
-    padding: 100px 10px 20px 10px;
+    padding: 120px 10px 100px 10px;
 }
 
 .header{
@@ -158,6 +158,10 @@ h1 {
     border: 1px solid #00ff00;
 }
 
+.hero-video-container {
+    min-height: 60vh;
+}
+
 .hero-video {
     position: absolute;
     inset: 0;
@@ -242,6 +246,12 @@ h1 {
     height: auto;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.image-three {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/twotHomePage.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .monospace {
@@ -354,14 +364,6 @@ a:active {
     padding: 10px 10px 50px 10px;
 }
 
-.card-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
 .airspace-monitor, .target-set-alpha, .target-set-bravo, .target-set-charlie {
     flex:1;
     background-color: #00000079;
@@ -389,6 +391,14 @@ a:active {
     flex-wrap: wrap;
     gap: 50px;
     margin-top: 100px;
+}
+
+.card-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .card {
@@ -954,7 +964,7 @@ tr:nth-child(even) {
 
     .greenfilter {
         background-color: #00ff0d1a;
-        padding: 20% 5% 30% 5%;
+        padding: 40% 5% 30% 5%;
         height: auto;
     }
     
@@ -987,6 +997,10 @@ tr:nth-child(even) {
         margin-left:auto;
         margin-right:auto;
         border: 1px solid #00ff00;
+    }
+
+    .hero-video-container {
+        min-height: 0;
     }
 
     .hero .video-wrapper,
