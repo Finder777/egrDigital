@@ -235,7 +235,7 @@ body{
 }
 
 .image-three {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/twotHomePage.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/urban_track.jpg');
     background-size: cover;
     background-position: center;
     height:500px;
@@ -249,7 +249,7 @@ body{
 }
 
 .image-five {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/operational-tracking-manual.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/images/twotHomePage.jpg');
     background-size: cover;
     background-position: center;
     height:500px;
