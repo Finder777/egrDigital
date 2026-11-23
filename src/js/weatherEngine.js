@@ -10,10 +10,11 @@ export function interpretWeatherCode(code) {
 export async function updateWeather(lat, lon) {
     try {
         const response = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&daily=temperature_2m_max,weather_code&hourly=shortwave_radiation,visibility,cloud_cover,precipitation&precipitation_unit=mm&timezone=auto`);
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,precipitation&daily=temperature_2m_max,weather_code&hourly=shortwave_radiation,visibility,cloud_cover&precipitation_unit=mm&timezone=auto`);
         const data = await response.json();
         
         const airTemp = data.current.temperature_2m;
+        const precipitation = data.current.precipitation;
         const maxTemp = data.daily.temperature_2m_max[0];
         const code = data.daily.weather_code[0];
         const summary = interpretWeatherCode(code);
@@ -27,6 +28,9 @@ export async function updateWeather(lat, lon) {
         
         const airTempDisplay = document.getElementById('airTemp');
         if (airTempDisplay) airTempDisplay.textContent = `Current Air Temp: ${airTemp}°C`;
+
+        const precipitationDisplay = document.getElementById('precipitation');
+        if (precipitationDisplay) precipitationDisplay.textContent = `Precipitation: ${precipitation} mm`;
         
         const tempDisplay = document.getElementById('maxTemp');
         if (tempDisplay) tempDisplay.textContent = `Max Air Temp: ${maxTemp}°C`;

@@ -32,3 +32,9 @@ function initConsent() {
     }
 }
 
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initConsent, { once: true });
+} else {
+    initConsent();
+}
+

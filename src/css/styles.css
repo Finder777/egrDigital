@@ -440,7 +440,8 @@ a:active {
     font-size: clamp(2rem, 3vw, 3rem);
 }
 
-.card > h3 {
+.card > h3,
+.card > .hero-header > h3 {
   font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
@@ -505,6 +506,15 @@ a:active {
     border: 2px solid whitesmoke;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    max-height: 804px;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.map-container.collapsed {
+    max-height: 0;
+    min-height: 0;
+    opacity: 0;
+    border-width: 0;
 }
 
 .map-container iframe {
@@ -558,12 +568,6 @@ a:active {
 
 .airspace-monitor{
     flex:1;
-}
-
-.radar-header{
-    font-style: italic;
-    width:fit-content;
-    font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 .radar-container {
@@ -633,7 +637,7 @@ a:active {
     width: 100%;
 }
 
-.log-header {
+.dim-header {
     background: #00ff0022;
     padding: 5px;
     font-size: 1rem;
@@ -1118,7 +1122,8 @@ tr:nth-child(even) {
         margin-top: 20px;
     }
 
-    .card > h3 {
+    .card > h3,
+    .card > .hero-header > h3 {
         font-size: clamp(1.2rem, 2vw, 2rem);
         color: darkgray;
     }
@@ -1132,7 +1137,8 @@ tr:nth-child(even) {
     .tactical-header{
         font-size: clamp(1.2rem, 3vw, 2rem);
         color:darkgray;
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        flex: 1;
     }
 
     .radar-header{

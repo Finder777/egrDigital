@@ -25,6 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const mapToggleBtn = document.getElementById('map-toggle');
+    const mapPanel = document.getElementById('dashboard-map');
+    const mapIcon = mapToggleBtn?.querySelector('i');
+
+    mapToggleBtn?.addEventListener('click', () => {
+        const isCollapsed = mapPanel?.classList.toggle('collapsed');
+        mapToggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+        mapToggleBtn.setAttribute('aria-label', isCollapsed ? 'Restore map' : 'Minimize map');
+        mapToggleBtn.title = isCollapsed ? 'Restore map' : 'Minimize map';
+
+        if (mapIcon) {
+            mapIcon.classList.toggle('fa-window-minimize', !isCollapsed);
+            mapIcon.classList.toggle('fa-window-restore', isCollapsed);
+        }
+    });
+
     const menuIcon = document.getElementById('menuIcon');
     const menuSection = document.querySelector('.menu-content');
     const closeMenu = document.getElementById('closeMenu');
