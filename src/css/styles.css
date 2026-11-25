@@ -129,7 +129,9 @@ body{
     flex-direction: column;
     width: 100%;
     gap: 10px;
+    margin: 0;
     padding: 10px 10px;
+    list-style: none;
 }
 
 .hero{
@@ -433,7 +435,6 @@ a:active {
     color: darkgray;
     background-color: #00000079;
     border: darkgrey 1px solid;
-    padding: 20px;
 }
 
 .card > h2 {
@@ -446,7 +447,7 @@ a:active {
 }
 
 .content {
-    padding: 5% 10%;
+    padding: 10% 10%;
 }
 
 .card > iframe {
@@ -997,7 +998,7 @@ tr:nth-child(even) {
 
     .greenfilter {
         background-color: #00ff0d1a;
-        padding: 40% 5% 30% 5%;
+        padding: 30% 5% 30% 5%;
         height: auto;
     }
     
@@ -1015,7 +1016,7 @@ tr:nth-child(even) {
     .orbitron-font {
         font-family: "Orbitron", serif;
         font-optical-sizing: auto;
-        font-size: clamp(2rem, 4vw, 6rem);
+        font-size: clamp(2rem, 6vw, 5rem);
         font-weight: 400;
         color: #fff;
         margin: 0px auto 0px auto;
@@ -1067,13 +1068,11 @@ tr:nth-child(even) {
         text-decoration: none;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-    
+
     .name {
         font-size: clamp(1.5rem, 2vw, 2rem);
     }
+
     .monospace {
         font-family: "Courier New", Courier, monospace;
         font-weight: 200;
@@ -1204,5 +1203,16 @@ tr:nth-child(even) {
         width: 100%;
         padding: 12px;
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .greenfilter {
+        padding: 40% 5% 30% 5%;
+    }
+
+    .orbitron-font {
+        font-size: clamp(2.5rem, 6vw, 4rem);
     }
 }
