@@ -1016,7 +1016,7 @@ tr:nth-child(even) {
     .orbitron-font {
         font-family: "Orbitron", serif;
         font-optical-sizing: auto;
-        font-size: clamp(2rem, 6vw, 5rem);
+        font-size: clamp(3rem, 6vw, 5rem);
         font-weight: 400;
         color: #fff;
         margin: 0px auto 0px auto;
